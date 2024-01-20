@@ -51,7 +51,7 @@ class Report(db.Model):
     hideSummary = db.Column(db.Boolean)
     caseNum = db.Column(db.String(100))
     badActorId = db.Column(db.Integer)
-    badActorType = db.Column(db.Integer, db.ForeignKey("db.ActorType.id"))
+    badActorType = db.Column(db.Integer)
     states = db.Column(db.String(100))
     county = db.Column(db.String(100))
     court = db.Column(db.String(100))
