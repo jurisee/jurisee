@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container blockMargin">
+<div class="row">
+
+<div class="col-sm-2">
+</div>
+
+<div class="col">
+    <span class="title pgTitle">
+        <h1>{% block title %} Add Violation {% endblock %}</h1>
+    </span>
+    <p>Add a new violation to be used to globally track across cases</p>
+
+      <form method="POST">
+        {{ form.csrf_token }}
+
+        <p>
+            {{ form.violation.label }}
+            {{ form.violation(class_="form-control") }} 
+        </p>
+
+        {% if form.violation.errors %}
+            <ul class="errors">
+                {% for error in form.violation.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+
+        <!--Step 1a: location-->
+
+        <p>
+        {{ form.violationTypeId.label }}
+        {{ form.violationTypeId(class_="form-control") }}
+        </p>
+        {% if form.violationTypeId.errors %}
+            <ul class="errors">
+                {% for error in form.violationTypeId.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+  
+        <p>
+            <input type="submit" class="btn btn-primary" value="Save">
+        </p>
+    </form>
+</div>
+
+<div class="col-sm-2">
+</div>
+
+
+</div>
+</div>
+
+{% endblock %}

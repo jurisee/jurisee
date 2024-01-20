@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container-fluid bg-dark">
+<div class="row">
+        
+    <div class="col-sm-2">
+            
+    </div>
+
+    <div class="col-sm-8 text-secondary text-center blockMargin">
+      <h1 class="display-5 fw-bold text-white">Juri See</h1>
+
+      <p class="fs-5 mb-4"><p class="lead">A collective of professional human rights workers, lawyers, journalists, technologists, community organizers, and investigators organizing affected individuals; conducting in-depth investigations; and providing data-at-scale to enable evidence-driven reporting and transparency in our shared fight against civil court corruption.</p>
+        <h2 class="red-text">Fighting to End Judicial Corruption</h2>
+
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+          <a href="#whatwedo"><button type="button" class="btn btn-outline-light btn-lg px-4 me-sm-3 fw-bold">What We Do</button></a>
+          <a class="nav-link" href="{{ url_for('actions.index') }}"><button type="button" class="btn btn-outline-light btn-lg px-4 me-sm-3 fw-bold">Get Involved</button></a>
+        </div>
+  
+    </div>
+
+
+    </div>
+
+    <div class="col-sm-2">
+            
+    </div>
+
+</div>
+</div>
+<!--end main banner-->
+
+<div class="container-fluid blockMargin" id="whatwedo">
+<div class="row">
+        
+    <div class="col-sm-2">
+            
+    </div>
+
+
+    <div class="col-sm-8 text-secondary text-center">
+        <h1 class="display-5 lh-1 mb-3">What We Do</h1>
+
+        <div class="card">
+        <div class="card-body">
+            <h2 class="red-text">Registry</h2>
+            <p>We are collecting reports of corruption (which you can provide anonymously) and tracking official complaints to bring transparency and accountability to corrupt players and oversight bodies.</p>
+            <a href="{{ url_for('registry.index') }}"><button type="button" class="btn btn-lg btn-outline-dark px-4 me-sm-3 fw-bold">Find an Offender</button></a>
+            <a href="{{ url_for('registry.addReport') }}"><button type="button" class="btn btn-lg btn-outline-dark px-4 me-sm-3 fw-bold">Report an Offender</button></a>
+            <a href="{{ url_for('registry.addGrievance') }}"><button type="button" class="btn btn-outline-dark btn-lg px-4 me-sm-3 fw-bold">File a Grievance</button></a>
+        </div>
+        </div>
+
+        <div class="card">
+        <div class="card-body">
+            <h2 class="red-text">Data Driven Investigations</h2>
+            <p>We are using data at scale, community reporting, and proven investigative methodology to trace criminal connections and patterns within the civil court ecosystem. It is time to bring needed transparency to this judicial branch of government, and readily identify the big players, cronyism, and hallmarks of corruption. </p>
+
+            <p>An API of public data, <i>making sure publicly-owned data is public</i>, is coming soon. </p>
+        </div>
+        </div>
+
+        <div class="card">
+        <div class="card-body">
+            <h2 class="red-text">Community Led Actions</h2>
+            <p>We are empowering individuals caught within the system to document and challenge abuses in their case, safely report misconduct, take collective action, help to track the big players of corruption, increase the effectiveness of court watching, and more.</p>
+
+            <a href="{{ url_for('actions.index') }}"><button type="button" class="btn btn-lg btn-outline-dark px-4 me-sm-3 fw-bold">Get Involved</button></a>
+            <a href=""><button type="button" class="btn btn-lg btn-outline-dark px-4 me-sm-3 fw-bold">Use Our Resources</button></a>
+        </div>
+        </div>
+
+        <div class="card">
+        <div class="card-body">
+            <h2 class="red-text"> Sensitive Tips</h2>
+            <p>Need anonymity? Concerned with snooping? Use an encrypted tipline.</p>
+            Signal:<br>
+            Secure eMail:<a href="mailto:jurisee@proton.me">jurisee@proton.me</a><br>
+        </div>
+        </div>
+    </div>
+
+    <div class="col-sm-2">
+            
+    </div>
+
+
+</div>
+</div>
+{% endblock %}

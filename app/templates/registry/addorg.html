@@ -1,0 +1,142 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container blockMargin">
+<div class="row">
+<div class="col-sm-1">
+</div>
+
+<div class="col">
+    <span class="title pgTitle">
+        <h1>{% block title %} Add an  Organization {% endblock %}</h1>
+    </span>
+    <p>Add an organization if it is not already listed.</p>
+
+
+      <form method="POST">
+        {{ form.csrf_token }}
+
+        <p>
+            {{ form.name.label }}
+            {{ form.name(class_="form-control") }} 
+        </p>
+
+        {% if form.name.errors %}
+            <ul class="errors">
+                {% for error in form.name.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+
+        <p>
+        {{ form.address1.label }}
+        {{ form.address1(class_="form-control") }}
+        </p>
+        {% if form.address1.errors %}
+            <ul class="errors">
+                {% for error in form.address1.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        <p>
+        {{ form.address2.label }}
+        {{ form.address2(class_="form-control") }}
+        </p>
+        {% if form.address2.errors %}
+            <ul class="errors">
+                {% for error in form.address2.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        <p>
+            {{ form.city.label }}
+            {{ form.city(class_="form-control") }}
+        </p>
+        {% if form.city.errors %}
+            <ul class="errors">
+                {% for error in form.city.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}  
+
+        <p>
+            {{ form.states.label }}
+            {{ form.states(class_="form-control") }}
+        </p>
+        {% if form.states.errors %}
+            <ul class="errors">
+                {% for error in form.states.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %} 
+
+        <p>
+            {{ form.zipcode.label }}
+            {{ form.zipcode(class_="form-control") }}
+        </p>
+        {% if form.zipcode.errors %}
+            <ul class="errors">
+                {% for error in form.zipcode.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}  
+
+        <p>
+            {{ form.orgEmail.label }}
+            {{ form.orgEmail(class_="form-control") }}
+        </p>
+        {% if form.orgEmail.errors %}
+            <ul class="errors">
+                {% for error in form.orgEmail.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %} 
+
+        <p>
+            {{ form.phone.label }}
+            {{ form.phone(class_="form-control") }}
+        </p>
+        {% if form.phone.errors %}
+            <ul class="errors">
+                {% for error in form.phone.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %} 
+
+        <p>
+            {{ form.website.label }}
+            {{ form.website(class_="form-control") }}
+        </p>
+        {% if form.website.errors %}
+            <ul class="errors">
+                {% for error in form.website.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %} 
+
+        <p>
+            <input type="submit" class="btn btn-primary" value="Save">
+        </p>
+    </form>
+</div>
+
+<div class="col-sm-1">
+</div>
+
+
+</div>
+</div>
+
+{% endblock %}

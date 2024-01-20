@@ -1,0 +1,186 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container blockMargin">
+<div class="row">
+        
+    <div class="col-sm-2">
+            
+    </div>
+
+    <div class="col-sm-8">
+        <h1>Intake</h1>
+        <form method="POST">
+        {{ form.csrf_token }}
+
+        <h3 class="red-text">Contact Information</h3>
+        <p>
+        {{ form.firstName.label }}
+        {{ form.firstName(class_="form-control") }}
+        </p>
+        {% if form.firstName.errors %}
+            <ul class="errors">
+                {% for error in form.firstName.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %} 
+
+        <p>
+        {{ form.lastName.label }}
+        {{ form.lastName(class_="form-control") }}
+        </p>
+        {% if form.lastName.errors %}
+            <ul class="errors">
+                {% for error in form.lastName.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %} 
+
+        <p>
+        {{ form.email.label }}
+        {{ form.email(class_="form-control") }}
+        </p>
+        {% if form.email.errors %}
+            <ul class="errors">
+                {% for error in form.email.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %} 
+
+        <p>
+        {{ form.phoneNum.label }}
+        {{ form.phoneNum(class_="form-control") }}
+        </p>
+        {% if form.phoneNum.errors %}
+            <ul class="errors">
+                {% for error in form.PhoneNum.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %} 
+
+                <p>
+        {{ form.skills.label }}
+        {{ form.skills(class_="form-control") }}
+        </p>
+        {% if form.skills.errors %}
+            <ul class="errors">
+                {% for error in form.skills.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %} 
+
+        <h3 class="red-text">Case Information</h3>
+        <p>
+        {{ form.caseNum.label }}
+        {{ form.caseNum(class_="form-control") }}
+        </p>
+        {% if form.caseNum.errors %}
+            <ul class="errors">
+                {% for error in form.caseNum.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %} 
+
+        <p>
+        {{ form.stillActive.label }}<br>
+        {{ form.stillActive(class_="form-check-input") }} Yes 
+        </p>
+        {% if form.stillActive.errors %}
+            <ul class="errors">
+                {% for error in form.stillActive.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %} 
+
+        <p>
+        {{ form.states.label }}
+        {{ form.states(class_="form-select") }}
+        </p>
+        {% if form.states.errors %}
+            <ul class="errors">
+                {% for error in form.states.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %} 
+
+        <p>
+        {{ form.counties.label }}
+        {{ form.counties(class_="form-select") }}
+        </p>
+        {% if form.counties.errors %}
+            <ul class="errors">
+                {% for error in form.counties.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %} 
+
+
+        <p>
+        {{ form.court.label }}
+        {{ form.court(class_="form-select") }}
+        </p>
+        {% if form.court.errors %}
+            <ul class="errors">
+                {% for error in form.court.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %} 
+
+        <p>
+        {{ form.description.label }}
+        {{ form.description(class_="form-control") }}
+        </p>
+        {% if form.description.errors %}
+            <ul class="errors">
+                {% for error in form.descripton.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %} 
+
+        <h3>Timeframe</h3>
+        <p>
+        {{ form.dateLastAction.label }}
+        {{ form.dateLastAction(class_="form-control") }}
+        </p>
+        {% if form.dateLastAction.errors %}
+            <ul class="errors">
+                {% for error in form.dateLastAction.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %} 
+
+
+        <p>
+        {{ form.dateLastOrder.label }}
+        {{ form.dateLastOrder(class_="form-control datepicker") }}
+        </p>
+        {% if form.dateLastOrder.errors %}
+            <ul class="errors">
+                {% for error in form.dateLastOrder.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %} 
+
+        </form> 
+    </div>
+
+    <div class="col-sm-2">
+
+            
+    </div>
+</div>
+</div>
+{% endblock %}

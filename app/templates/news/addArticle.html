@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <span class="title pgTitle">
+        <h1 class="">{% block title %}Add Article {% endblock %}</h1>
+    </span>
+    <form method="POST">
+    <p>
+        <textarea id="title" name="title" cols="30" rows="3"></textarea>
+    </p>
+    <p>
+        <textarea id="content" name="content" cols="30" rows="3"></textarea>
+    </p>
+    <p>
+        <input type="text" id="author" name="author">
+    </p>
+    <p>
+        <label for="dateCreated">Date:</label>
+        <input type="date" id="dateCreated" name="dateCreated"> 
+    </p>
+    <p><input type="submit"></p>
+    </form>
+
+{% endblock %}

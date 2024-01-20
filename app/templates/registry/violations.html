@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container blockMargin">
+<div class="row">
+
+<div class="col-sm-1">
+</div>
+
+<div class="col">
+    <span class="title pgTitle">
+        <h1>{% block title %} Report an Offender {% endblock %}</h1>
+    </span>
+
+ <ul class="list-group list-group-horizontal-sm text-center w-100 d-flex">
+  <li class="list-group-item w-100">Step 1: <br>General</li>
+  <li class="list-group-item w-100 active">Step 2:<br>Violations</li>
+  <li class="list-group-item w-100">Step 3:<br>Review</li>
+  <li class="list-group-item w-100">Step 4: <br>Grievance</li>
+  <li class="list-group-item w-100">Step 5: <br>Publish</li>
+</ul>
+<br>
+    <h3 class="red-text">Violations</h3>
+
+<div class="row">
+    <div class="col-7">
+
+
+    <p>In this step you will identify violations of state and federal law that have occurred. The violations in this form have been curated, and categorized for ease of use and potential collective action.</p>
+    <p>This is an important step as it ensures your report includes identifiable violations of law and ethics, enables us to track patterns of abuses, and, if you choose, to  pair your case with other people experiencing the same.</p>
+
+
+    <button class="btn btn-outline-secondary" id="manual-options-btn">Manually Select</button>
+        <a class="navbar-brand" href="{{ url_for('registry.addViolations', vio_id=1) }}"><button class="btn btn-primary">Next</button></a>
+
+</div>
+
+<div class="col-5">
+        <div class="card">
+  <div class="card-body">
+      <h5 class="card-title">Pro Tips</h5>
+    Documenting all of the violations in one go can be challenging. Submit whatever you can finish in one sitting as one report, and add another report later. Be sure to add new reports when new violations occur.</p>
+
+  </div>
+        </div>
+</div>
+</div>
+
+
+
+    <div id ="manual-options">
+        <br>
+        <hr>
+        <br>
+    <div class="card">
+        <div class="card-header">
+           <h2 class="red-text">Ex Parte Removal of Rights</h2>
+        </div>
+        <div class="card-body">
+            <p>Were your custodial rights immediately removed, you kicked out of your home, you given a stay away order, or something similar without you present, or without being given notice? </p>
+
+            <a class="navbar-brand" href="{{ url_for('registry.addViolations', vio_id=1) }}"><button class="">Add Ex Parte Violations</button></a>
+        </div>
+    </div>
+
+
+    <div class="card">
+        <div class="card-header">
+           <h2 class="red-text">Abuse of Temporary Orders</h2>
+        </div>
+        <div class="card-body">
+            <p>Have you had a temporary order removing your rights in place for months or even years without a trial, without evidence of abuse or neglect, based on obvious perjury, based ludicrous claims, or something similar? </p>
+
+            <a class="navbar-brand" href="{{ url_for('registry.addViolations', vio_id=2) }}"><button class="">Add Abuse of Temporary Order Violations</button></a>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+           <h2 class="red-text">Excessively Punitive Acts</h2>
+        </div>
+        <div class="card-body">
+            <p>Are you required to use supervised visits without a history of violent crimes, threatened with or held in contempt for "temporary" orders that have never been tried or cannot be met, ordered to have zero contact with your children based on hearsay, restricted to city or county bounds, or similar? </p>
+
+            <a class="navbar-brand" href="{{ url_for('registry.addViolations', vio_id=3) }}"> <button class="">Add Excessively Punitive Acts Violations</button></a>
+        </div>
+    </div>
+    </div>
+
+</div>
+
+<div class="col-sm-1">
+
+</div>
+</div>
+
+
+</div>
+</div>
+
+<script>
+$('#manual-options').hide()
+$('#manual-options-btn').click(function(){
+        $('#manual-options').toggle()
+    });
+</script>
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container blockMargin">
+<div class="row">
+   
+       <div class="col-sm-2">
+            
+    </div>     
+
+    <div class="col-sm-8 text-center">
+        <h1>Actions</h1>
+        <p>We are organizing. It takes a network to bring down a network.</p>
+        <p><strong>Get Involved!</strong></p>
+        <div class="card">
+  <div class="card-body">
+   <h2 class="red-text">Collective Action</h2>
+   <p>There are a number of community-led actions happening. Complete our Intake Form. We will determine the right fit, connect you into the community, and get you signed-up for our buddy system. </p>
+
+    <p><a href="{{ url_for('actions.intake') }}"><button type="button" class="btn btn-outline-dark btn-lg px-4 me-sm-3 fw-bold">Intake Form</button></a>
+   <p><strong>Note:</strong> If you have a particular skillset (e.g., accounting, technical skills, legal, etc.) that would be helpful to our cause please identify that in the intake form.</p>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-body">
+   <h2 class="red-text">Court Watching</h2>
+   <p>To bring transparency we need witnesses in the court room. There are a number of organizations and networks running such court watching efforts. Find a court date and be a witness for a fellow victim. Be sure to multiply your impact and bring transparency by also completing the Court Watching Form.</p>
+   <p><a href="">Court Watching Groups</a> | <a href="">Court Watching Form</a></p>
+  </div>
+</div>
+    </div>
+
+    <div class="col-sm-2">
+            
+    </div>
+</div>
+</div>
+{% endblock %}

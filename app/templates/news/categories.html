@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <span class="title">
+        <h1>{% block title %}Add Article {% endblock %}</h1>
+    </span>
+    <form method="POST">
+        <p>
+        <textarea id="q-content" name="content" placeholder="Question" cols="30" rows="3"></textarea>
+        </p>
+        <textarea id="q-answer" name="answer" placeholder="Answer" cols="30" rows="3"></textarea>
+        <p><input type="submit"></p>
+    </form>
+
+{% endblock %}
