@@ -93,20 +93,6 @@
             <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#s1accordian">
               <div class="accordion-body">
 
-
-
-                              <p>
-                {{ form.badActorType.label }}
-                {{ form.badActorType(class_="form-select") }}
-                </p>
-                {% if form.badActorType.errors %}
-                    <ul class="errors">
-                        {% for error in form.badActorType.errors %}
-                            <li>{{ error }}</li>
-                        {% endfor %}
-                    </ul>
-                {% endif %}
-
                                     <!-- Button trigger search actor modal -->
                 <button type="button" class="btn btn-outline-primary w-100" id="searchActorBtn" data-bs-toggle="modal" data-bs-target="#searchModal">Search for Offender</button>
 
@@ -123,6 +109,18 @@
                     </ul>
                 {% endif %}
 
+
+                              <p>
+                {{ form.badActorType.label }}
+                {{ form.badActorType(class_="form-select") }}
+                </p>
+                {% if form.badActorType.errors %}
+                    <ul class="errors">
+                        {% for error in form.badActorType.errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
 
                 <a href="#" class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseOne" >Next</a>
 
@@ -241,7 +239,7 @@
       </div>
       <div class="modal-body">
         <div class="input-group">
-          <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" id="searchVal" />
+          <input type="search" class="form-control rounded searchVal" placeholder="Search" aria-label="Search" aria-describedby="search-addon" id="1" />
         </div>
         <ul id="searchResults" class="list-group"></ul>
           <hr>

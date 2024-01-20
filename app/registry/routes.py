@@ -1,7 +1,6 @@
 from flask import Flask, render_template, request, url_for, flash, redirect, make_response
 from app.registry import bp
 from app.extensions import db
-from datetime import datetime
 from app.registry.forms import ReportForm, AddActorForm, AddViolationForm, AddOrgForm, AddViolationsForm
 from app.models import Report, Actors, ActorType, VioCategory, Violations, ReportViolations, ViolationsSum, States, Counties, Orgs
 import json
@@ -95,6 +94,7 @@ def addGrievance():
         return redirect(url_for('registry.entryViolations'))
     return render_template('registry/addgrievance.html', form=form)
 
+# admin interface to add violation to list of all
 @bp.route('/addviolation/', methods=('GET','POST'))
 def addViolation():
     form = AddViolationForm()

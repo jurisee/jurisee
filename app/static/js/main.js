@@ -3,12 +3,11 @@ const d = new Date();
 let year = d.getFullYear();
 $( ".year" ).html(year);
 
-
 $( ".nyoptions" ).hide();
 $("#off_name").hide();
 
-$('#searchVal').keyup(function() {
-    val = $("#searchVal").val();
+$('.searchVal').keyup(function() {
+    val = $(".searchVal").val();
     url= "/api/searchactors/" + val;
     $.getJSON(url, function(result){
         searchResults(result);
@@ -18,7 +17,6 @@ $('#searchVal').keyup(function() {
 
 function searchResults(data) {
     data = data;
-    console.log(data)
     let items ="";
    for (key in data) {
        items += "<li class='list-group-item list-group-item-action list-group-item-light' value=" + data[key].id + ">" + data[key].fName + " " + data[key].lName + "</li>";
@@ -28,6 +26,8 @@ function searchResults(data) {
 
 $('#searchResults').on('click','li',function() {
     id = this.value
+    test = this.id
+    alert(test)
     name = $(this).html();
     html = "<label>Offender Name: </label><br>" +
         name +
@@ -39,7 +39,7 @@ $('#searchResults').on('click','li',function() {
     $("#searchActorBtn").hide()
     $('#searchModal').modal('hide');
     $('#searchVal').val('');
-    $("#searchResults").val('');
+    $("#searchResults").html('');
 });
 
 

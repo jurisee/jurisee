@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
+    
 <div class="container-fluid bg-dark">
 <div class="row">
         
@@ -14,21 +15,21 @@
 
     <a href="#mission"><button type="button" class="btn btn-outline-light btn-lg px-4 me-sm-3 fw-bold">Mission</button></a>
     <a href="#need"><button type="button" class="btn btn-outline-light btn-lg px-4 me-sm-3 fw-bold">Need</button></a>
-    <a href="#issues"><button type="button" class="btn btn-outline-light btn-lg px-4 me-sm-3 fw-bold">Issues</button></a>
     <a href="#approach"><button type="button" class="btn btn-outline-light btn-lg px-4 me-sm-3 fw-bold">Approach</button></a>
-    <a href="#structure"><button type="button" class="btn btn-outline-light btn-lg px-4 me-sm-3 fw-bold">Org Structure</button></a>
+    <a href="#structure"><button type="button" class="btn btn-outline-light btn-lg px-4 me-sm-3 fw-bold">Structure</button></a>
     </div>
 
     <div class="col-sm-2">
             
     </div>
+    <div id="mission"></div>
 </div>
 </div>
 
 <div class="container-fluid blockMargin">
-<div class="row">
+<div class="row" >
         
-    <div class="col-sm-2" id="mission">
+    <div class="col-sm-2">
             
     </div>
 
@@ -40,10 +41,11 @@
     <div class="col-sm-2">
             
     </div>
+    <div id="need"></div>
 </div>
 </div>
 
-<div class="container-fluid blockMargin bg-dark" id="need">
+<div class="container-fluid blockMargin bg-dark">
 <div class="row">
         
     <div class="col-sm-2">
@@ -60,48 +62,13 @@
     </div>
 
     <div class="col-sm-2">
-            
+
     </div>
+        <div id="approach"></div>
 </div>
 </div>
 
-<div class="container-fluid blockMargin" id="issues">
-<div class="row">
-        
-    <div class="col-sm-2">
-            
-    </div>
-
-    <div class="col-sm-8 text-secondary">
-        <h2 class="red-text text-center">Issues</h2>
-        <p>The intricacy with which these bad actors are conducting their illegitimate acts, and the egregious nature of their violations have the hallmarks of organized crime. Corrupt players within the civil courts willfully and blatantly:</p>
-        <ul>
-            <li>take children from parents without cause</i></li>
-            <li>delay proceedings <i>for years</i></li>
-            <li>ignore serious incidents of abuse that do exist</li>
-            <li>commit blatant financial fraud</li>
-            <li>in acts of cronyism, repeat assign AFCs, evaluators, mental health professionals, and supervisors that belong to their network</li>
-            <li>generate unnecessary fees for allegedly "neutral" evaluations and other services provides by these same AFCs, evaluators, mental health professionals, and supervisors that belong to their network</li>
-            <li>use the same AFCs, evaluators, mental health professionals and supervisors to manufacture false claims and allegedly "neutral" reports that provide a veneer of legitmacy for reports and claims with evidence or science behind them</li>
-        </ul>
-
-    <p>These networks of judges and corrupt legal professionals work together to produce outcomes that predictably and blatantly are biased in favor of the monied or socialy connected party. </p>
-
-    <p>These same corrupt legal professionals employ disinformation to discredit persons talking about the corruption. They use phrases such as "neutral court appointee" or "disgruntled litigants" to minimize complaints. And responsible parties deflect and allege funding shortage when high profile cases raise spotlight on the issues. </p>
-
-    <p>The corruption is so pervasive it has also delegitimized oversight bodies, and limited the checks and balances of government bodies. Oversight bodies refuse to act. Responsible court adminisrators have willfully created legal vacuums. Responsible individuals obscure court data to ensure there is no transparency. And all responsible turn a blind eye to blatant violations of laws and regulations when asked to correct.</p>
-
-    <p>They commission reports, again and again, yet never correct despite findings. Instead, they repeatedly propose "training" as a solution. They implement rule changes to appease the public but which have no ability to correct. And they propose legislation, which more-often-than not is never passed and becomes defunct from inaction.</p>
-
-    </div>
-
-    <div class="col-sm-2">
-            
-    </div>
-</div>
-</div>
-
-<div class="container-fluid blockMargin bg-dark" id="approach">
+<div class="container-fluid">
 <div class="row">
         
     <div class="col-sm-2">
@@ -114,22 +81,23 @@
 
         <p>The network and platform provide by Juri See is needed because the corruption is so pervasive it has already delegitimized oversight bodies, and limited the checks and balances of government bodies. Bad actors hide within a complex system of obfuscation of court data and administrative actions. This also makes journalistic reporting on the issues challenging and resource intensive. The resulting lack of journalistic exposure about the bad actors, combined with the intentional lack of oversight by administrators and oversight bodies, has enabled corrupt judges, court appointees, and lawyers to operate with impunity.</p>
 
-       </div>
+    </div>
 
     <div class="col-sm-2">
             
     </div>
+    <div id="structure"></div>
 </div>
 </div>
     
-    <div class="container-fluid blockMargin" id="structure">
+    <div class="container-fluid blockMargin  bg-dark">
     <div class="row">
         
     <div class="col-sm-2">
             
     </div>
 
-    <div class="col-sm-8 text-secondary"> 
+    <div class="col-sm-8 text-secondary blockMargin">
 
      <h2 class="red-text text-center">Structure</h2>
       <p>A core working group operates and guides Juri See's large-scale investigative reporting and group actions. This working group is comprised of professional human rights workers, investigative reporters, lawyers, software development professionals, community organizers, and special investigators.</p>
