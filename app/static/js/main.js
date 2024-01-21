@@ -53,3 +53,7 @@ $("#states").change(function(){
 $('#saveNext').click(function(){
     $(".accordion-collapse").addClass("collapse show");
 });
+
+$("#violations").children('li').addClass("list-group-item");
+
+//$("li").addClass( "list-group-item" );
