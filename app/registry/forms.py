@@ -8,11 +8,8 @@ from wtforms.widgets import EmailInput
 class ReportForm(FlaskForm):
     submitterId = HiddenField()
     reportType = HiddenField()
-    title = StringField('Title', validators=[InputRequired(),Length(min=10, max=100)])
-    summary = TextAreaField('Summary',validators=[InputRequired(), Length(max=2000)])
-    hideSummary = BooleanField(false_values=None)
     caseNum = StringField('Case Number', validators=[InputRequired(),
-                                             Length(min=10, max=100)])
+                                             Length(min=5, max=100)])
     badActorId = HiddenField()
     badActorType = SelectField('Offender Role',
                        choices=[],
@@ -21,21 +18,25 @@ class ReportForm(FlaskForm):
                        choices=[],
                        validators=[InputRequired()])
     county = SelectField('County',
-                       choices=['','Appellate', 'Appellate Terms' 'Civil', 'Court of Appeals', 'County','Criminal','Family','Supreme'])
+                       choices=[], validators=[InputRequired()])
     court = SelectField('Court',
-                       choices=['','Appellate', 'Appellate Terms' 'Civil', 'Court of Appeals', 'County','Criminal','Family','Supreme'])
-    evidence = MultipleFileField('Add Evidence')
+                       choices=['','Appellate', 'Appellate Terms' 'Civil', 'Court of Appeals', 'County','Criminal','Family','Supreme'], validators=[InputRequired()])
+    gender = SelectField('Gender',
+                       choices=['','Man', 'Woman','Non-Binary', 'Nondisclosed'], validators=[InputRequired()])
+    highIncome = BooleanField('Is the other party high income (over $200,000 in annual income etc?)', false_values=None)
+    highWealth = BooleanField("Is the other party high wealth (over $1 million in self or family assets)", false_values=None)
+    eighteenB = BooleanField("Are you (or person effected) assigned an 18b lawyer?", false_values=None)
+    proSe = BooleanField("Are you (or person effected) Pro Se?", false_values=None)
 
 class AddViolationsForm(FlaskForm):
     submitterId = IntegerField('Price', validators=[InputRequired()])
-    caseNum = StringField('Case Number', validators=[InputRequired(),
-                                             Length(min=10, max=100)])
     reportType = SelectField('Report Type',
                        choices=['','Report', 'Grievance', 'Courtwatch'],
                        validators=[InputRequired()])
     violations = SelectMultipleField('Select all that apply',
                        choices=[], option_widget=widgets.CheckboxInput(), widget=widgets.ListWidget(prefix_label=False))
-    summary = TextAreaField('Please describe related events',validators=[InputRequired(), Length(max=2000)])
+    title = StringField('Title')
+    summary = TextAreaField('Please describe related events (approx 500 words limit)',validators=[InputRequired(), Length(max=2500)])
     hideSummary = BooleanField('Do not publish the description',false_values=None)
     evidence = MultipleFileField('Add Evidence')
 

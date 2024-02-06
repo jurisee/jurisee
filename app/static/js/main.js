@@ -3,7 +3,7 @@ const d = new Date();
 let year = d.getFullYear();
 $( ".year" ).html(year);
 
-$( ".nyoptions" ).hide();
+//$( ".nyoptions" ).hide();
 $("#off_name").hide();
 
 $('.searchVal').keyup(function() {
@@ -27,7 +27,6 @@ function searchResults(data) {
 $('#searchResults').on('click','li',function() {
     id = this.value
     test = this.id
-    alert(test)
     name = $(this).html();
     html = "<label>Offender Name: </label><br>" +
         name +
@@ -50,9 +49,6 @@ $("#states").change(function(){
     }
 })
 
-$('#saveNext').click(function(){
-    $(".accordion-collapse").addClass("collapse show");
-});
 
 $("#violations").children('li').addClass("list-group-item");
 

@@ -1,0 +1,139 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container blockMargin">
+<div class="row">
+
+<div class="col-sm-2">
+</div>
+
+<div class="col">
+    <span class="title pgTitle">
+        <h1> {{  report.title }}</h1>
+    </span>
+
+
+<div class="container letter">
+    <div class="row">
+        <div class="col text-end">
+            <p>
+                        YOUR NAME<br>
+            YOUR EMAIL
+            </p>
+
+            <p>
+                Juri See<br>
+                Investigative Watchdog of Civil Court<br>
+                jurisee@proton.me<br>
+                phone here
+            </p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col text-start">
+            <p>
+                        GRIEVANCE BODY NAME HERE<br>
+            GRIEVANCE BODY ADDRESS HERE
+            </p>
+
+            <h5 class=" text-center">
+                {{  report.title }}
+            </h5>
+            <p class="text-center">
+                Case No.: {{report.caseNum}}<br>
+                {{ report.date_created }}
+
+            </p>
+        </div>
+    </div>
+
+  <div class="row">
+        <div class="col text-start">
+            <p>
+            <p>To all responsible parties of GRIEVANCE BODY NAME HERE:</p>
+
+<p>I, YOUR NAME HERE, in partnership with Juri See, submit this formal complaint against:</p>
+
+            <p class="text-center"><strong>Name: </strong> {{ report.actor.fName}} {{ report.actor.lName}}</p>
+            <p class="text-center"><strong>Role: </strong> {{ report.role.actorType }}</p>
+
+            <p>This complaint relates to proceedings in the {{ report.court }} of {{ report.counties.county }}, {{ report.states }}, Case No.: {{report.caseNum}}.</p>
+
+            <h3>Allegations of {{report.reportCategory}}</h3>
+The number violations of state and federal law and of my rights are numerous. In this complaint, I notify you of the following violations:
+        <ul>
+        {% for violation in violations %}
+                <li>{{ violation.violation.violation }}</li>
+        {% endfor %}
+        </ul>
+
+        <p>Please be aware, I and Juri See do not limit any grievance(s) to only the events and violations that are cited here, in relation to the case cited above. I and Juri See reserve the right to submit additional complaints, as needed.</p>
+
+
+
+        <H3>Description of Related Events: </H3>
+        <p>These violations occurred around or on DATE HERE.</p>
+
+        <p>
+            {{ report.summary }}
+        </p>
+
+        <h3>Exhibits</h3>
+        <p>I have attached a sample of the documentary evidence I have to substantiate my claims of {{report.reportCategory}}. These are listed in the Appendix below. The exhibits provided should be considered only a sample of the evidence available. Please be sure to contact me as you begin the investigation, to ensure you receive additional evidence and depositions. </p>
+
+        <h3>Conclusion</h3>
+        <p>Please notify me when the investigation begins and if and when a hearing will be held on these matters. Myself and Juri See would like to be witness to any proceedings. Please provide myself and Juri See with a full summation, identifying the factual underpinnings, for the outcome determined by NAME OF GRIEVANCE BODY HERE for this complaint.</p>
+
+        <p>This complaint is submitted in partnership with Juri See, to ensure there is an independent, verifiable record of the complaints filed to NAME OF GRIEVANCE BODY HERE. Juri See is committed to transparency and accountability in government, for all citizens, including for those individual citizens that have chosen to serve in a judicial role or some other role in the legal profession. </p>
+
+        </div>
+    </div>
+
+  <div class="row">
+        <div class="col text-end">
+            <p>Respectfully</p>
+
+______________________________________<br>
+Signed<br>
+YOUR NAME HERE<br>
+YOUR EMAIL
+        </div>
+  </div>
+  <div class="row">
+         <div class="col text-end">
+
+        </div>
+
+  </div>
+
+</div>
+
+        </div>
+
+
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+<div class="col-sm-2">
+</div>
+
+
+</div>
+</div>
+
+{% endblock %}

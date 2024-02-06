@@ -1,7 +1,7 @@
 from flask import Flask,jsonify,render_template, request, url_for, flash, redirect
 from app.api import bp
 from app.extensions import db
-from app.models import Actors, Article, States
+from app.models import Actors, ActorType, Article, States
 from datetime import datetime
 import simplejson as json
 from app.models import actors_schema
@@ -29,3 +29,19 @@ def searchActors(search_val):
     if(request.method == 'GET'):
         actors = Actors.query.filter(or_(ilike_op(Actors.lName,f'%{val}%'),ilike_op(Actors.fName,f'%{val}%') )).order_by(Actors.lName.desc())
         return actors_schema.dump(actors)
+
+@bp.route('/uploadcsv', methods=('GET','POST'))
+def uploadCSV():
+    if request.method == 'POST':
+        actorType = ActorType(id=14, actorType='test')
+        db.session.add(actorType)
+        db.session.commit()
+        csv_file = request.files['file']
+        csv_file = TextIOWrapper(csv_file, encoding='utf-8')
+        csv_reader = csv.reader(csv_file, delimiter=',')
+        #for row in csv_reader:
+            #actorType = ActorType(id=14, actorType='test')
+           # db.session.add(actorType)
+           # db.session.commit()
+        return redirect(url_for('main.index'))
+    return render_template('api/uploadcsv.html')

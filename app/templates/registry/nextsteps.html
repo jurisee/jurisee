@@ -1,0 +1,117 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container blockMargin">
+<div class="row">
+
+
+
+<div class="col">
+    <span class="title pgTitle">
+        <h1>{{  title  }}</h1>
+    </span>
+
+
+ <ul class="list-group list-group-horizontal-sm text-center w-100 d-flex">
+  <li class="list-group-item w-100">Step 1: <br>General</li>
+  <li class="list-group-item w-100">Step 2:<br>Violations</li>
+  <li class="list-group-item w-100">Step 3:<br>Review</li>
+  <li class="list-group-item w-100 active">Step 4: <br>Next Steps</li>
+</ul>
+<br>
+
+
+
+
+    <h3 class="red-text">Next Steps</h3>
+
+    <p><strong>Thank you!</strong> You are helping bring transparency and accountability to all citizens, and awareness for others caught in this system. No one should be above the law, including individuals that have chosen the legal professions.</p>
+     <p>Want to do more? You can turn this report into a grievance, join in collective action, and file more reports. <a href="#multiple">Why file multiple reports?</strong></a></p>
+
+
+
+
+<div class="row">
+
+ <div class="col-md-4">
+    <div class="card violations">
+        <a href="{{ url_for('actions.index') }}">
+        <div class="card-body">
+            <h5 class="red-text">File a Grievance</h5>
+<p>Filing a formal grievance with oversight bodies and organizations helps build a foundation for collective action. Juri See guides you through the process. </p>
+    <a href="{{ url_for('registry.addReport', type=type) }}"><button type="button" class="btn btn-outline-dark w-100 btn-lg px-4 me-sm-3 fw-bold">Turn Your Report into a Grievance</button></a>
+        </div>
+        </a>
+    </div>
+</div>
+
+<div class="col-md-4">
+    <div class="card violations">
+        <a href="{{ url_for('registry.index') }}">
+        <div class="card-body">
+            <h5 class="red-text">Collective Action</h5>
+            <p>We are organizing to bring people to account. Join in community-led actions, or increase transparency by being a formal witness in the court rooms.</p>
+           <a href="{{ url_for('actions.index') }}"><button type="button" class="btn btn-lg btn-outline-dark px-4 me-sm-3 fw-bold w-100">Get Involved</button></a>
+        </div>
+        </a>
+    </div>
+</div>
+
+
+
+<div class="col-md-4">
+    <div class="card violations">
+        <a href="{{ url_for('actions.index') }}">
+        <div class="card-body">
+            <h5 class="red-text">File Another Report</h5>
+<p>Don't stop with one report! Did other violations occur? Be sure to file more reports following our easy to use process.</p>
+    <a href="{{ url_for('registry.addReport', type=type) }}"><button type="button" class="btn btn-outline-dark w-100 btn-lg px-4 me-sm-3 fw-bold">Report an Offender</button></a>
+        </div>
+        </a>
+    </div>
+</div>
+
+
+
+</div>
+
+
+
+
+</div>
+</div>
+
+<div class="container">
+
+<div class="row" id="multiple">
+    <div class="col-1"></div>
+    <div class="col-sm-10">
+        <hr>
+        <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Why File Multiple Reports?</h5>
+            <ul>
+                <li>Documenting all the violations you encounter in a single report enables offenders to hide the scale of what is happening.</li>
+                <li>Submitting what you can finish in one sitting, and adding more reports later helps manage trauma and PTSD.</li>
+                <li>Submitting violations by type supports collective action and better enables us to track patterns of abuses.</li>
+                <li>Creating a report as the violations occur builds a timely record; you can choose to publish or file later when you feel ready.</li>
+            </ul>
+        </div>
+        </div>
+    </div>
+
+        <div class="col-1"></div>
+</div>
+</div>
+
+
+
+</div>
+
+
+
+</div>
+</div>
+
+
+{% endblock %}

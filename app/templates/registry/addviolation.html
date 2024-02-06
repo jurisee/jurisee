@@ -30,7 +30,7 @@
         {% endif %}
 
 
-        <!--Step 1a: location-->
+        <!--Step 2: location-->
 
         <p>
         {{ form.violationTypeId.label }}
@@ -43,7 +43,73 @@
                 {% endfor %}
             </ul>
         {% endif %}
-  
+
+           <div class="accordion-item">
+            <h2 class="accordion-header" id="headingThree">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                Summary
+              </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#s1accordian">
+              <div class="accordion-body">
+                  <p>
+                    {{ form.title.label }}
+                    {{ form.title(class_="form-control")}}
+                  </p>
+
+                {% if form.title.errors %}
+                    <ul class="errors">
+                        {% for error in form.title.errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+
+                <p>
+                {{ form.summary.label }}
+                </p>
+                {{ form.summary(class_="form-control") }}
+
+                {% if form.summary.errors %}
+                    <ul class="errors">
+                        {% for error in form.summary.errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+
+                {{ form.hideSummary(class_="form-check-input") }}
+                {{ form.hideSummary.label }}
+                <br>This can help protect privacy and increase anonymity. If checked, only the generic violations selected above will be made public.<br>
+                </p>
+                {% if form.hideSummary.errors %}
+                    <ul class="errors">
+                        {% for error in form.hideSummary.errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+
+<!--
+    <h3 class="red-text">1d. General Evidence</h3>
+        <p>
+            {{ form.evidence.label }}
+            {{ form.evidence(class_="form-control") }}
+        </p>
+
+
+        {% if form.evidence.errors %}
+            <ul class="errors">
+                {% for error in form.evidence.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+
+-->
+
+
         <p>
             <input type="submit" class="btn btn-primary" value="Save">
         </p>

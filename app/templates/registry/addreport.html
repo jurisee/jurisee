@@ -8,16 +8,14 @@
 
 <div class="col">
 
-
-
-    <h1>Report an Offender</h1>
+    <h1>{{  title }}</h1>
     <p>Submit a report about an unethical judge, AFC, GAL, forensic evaluator or other bad court actor.</p>
 
 <ul class="list-group list-group-horizontal-sm text-center w-100 d-flex">
   <li class="list-group-item w-100 active">Step 1: <br>General</li>
-  <li class="list-group-item w-100">Step 2:<br>Violations</li>
+  <li class="list-group-item w-100">Step 2:<br>Select Violations</li>
   <li class="list-group-item w-100">Step 3:<br>Review</li>
-  <li class="list-group-item w-100">Step 4: <br>Publish</li>
+  <li class="list-group-item w-100">Step 4: <br>Next Steps</li>
 </ul>
 <br>
     <h3 class="red-text">General</h3>
@@ -77,7 +75,7 @@
                     {% endif %}
                     </div>
 
-                    <a href="#" class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseOne" >Next</a>
+                    <a href="#" class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo" >Next</a>
 
                   </div>
               </div>
@@ -87,7 +85,7 @@
           <div class="accordion-item">
             <h2 class="accordion-header" id="headingTwo">
               <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                Offender Details
+                Offender
               </button>
             </h2>
             <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#s1accordian">
@@ -122,7 +120,7 @@
                     </ul>
                 {% endif %}
 
-                <a href="#" class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseOne" >Next</a>
+              <a href="#" class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseOne" >Next</a>
 
               </div>
             </div>
@@ -133,50 +131,14 @@
           <div class="accordion-item">
             <h2 class="accordion-header" id="headingThree">
               <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                Summary
+               Details
               </button>
             </h2>
             <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#s1accordian">
               <div class="accordion-body">
-                  <p>
-                    {{ form.title.label }}
-                    {{ form.title(class_="form-control")}}
-                  </p>
 
-                {% if form.title.errors %}
-                    <ul class="errors">
-                        {% for error in form.title.errors %}
-                            <li>{{ error }}</li>
-                        {% endfor %}
-                    </ul>
-                {% endif %}
-
-                <p>
-                {{ form.summary.label }}
-                </p>
-                {{ form.summary(class_="form-control") }}
-
-                {% if form.summary.errors %}
-                    <ul class="errors">
-                        {% for error in form.summary.errors %}
-                            <li>{{ error }}</li>
-                        {% endfor %}
-                    </ul>
-                {% endif %}
-
-                {{ form.hideSummary(class_="form-check-input") }}
-                {{ form.hideSummary.label }}
-                <br>This can help protect privacy and increase anonymity. If checked, only the generic violations selected above will be made public.<br>
-                </p>
-                {% if form.hideSummary.errors %}
-                    <ul class="errors">
-                        {% for error in form.hideSummary.errors %}
-                            <li>{{ error }}</li>
-                        {% endfor %}
-                    </ul>
-                {% endif %}
-
-                <p>
+              {% if type == 'grievance': %}
+               <p>
                     {{ form.caseNum.label }}
                     {{ form.caseNum(class_="form-control") }}
                 </p>
@@ -188,37 +150,92 @@
                         {% endfor %}
                     </ul>
                 {% endif %}
+              {% endif %}
+
+                <p>
+                {{ form.gender.label }}
+                {{ form.gender(class_="form-select") }}
+                </p>
+                {% if form.gender.errors %}
+                    <ul class="errors">
+                        {% for error in form.gender.errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+
+               <p>
+                    {{ form.highIncome(class_="form-check-input") }}
+                    {{ form.highIncome.label(class_="form-check-label") }}
+
+                </p>
+
+                {% if form.highIncome.errors %}
+                    <ul class="errors">
+                        {% for error in form.highIncome.errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+
+               <p>
+                    {{ form.highWealth(class_="form-check-input") }}
+                    {{ form.highWealth.label(class_="form-check-label") }}
+
+                </p>
+
+                {% if form.highWealth.errors %}
+                    <ul class="errors">
+                        {% for error in form.highWealth.errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+
+               <p>
+                    {{ form.eighteenB(class_="form-check-input") }}
+                    {{ form.eighteenB.label(class_="form-check-label") }}
+
+                </p>
+
+                {% if form.eighteenB.errors %}
+                    <ul class="errors">
+                        {% for error in form.eighteenB.errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+
+               <p>
+                   {{ form.proSe(class_="form-check-input") }}
+                   {{ form.proSe.label(class_="form-check-label") }}
+
+                </p>
+
+                {% if form.proSe.errors %}
+                    <ul class="errors">
+                        {% for error in form.proSe.errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+
 
                 <a href="#" class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseOne" >Next</a>
 
               </div>
             </div>
           </div>
+
+
+
+
         </div>
 
 
-
-<!--
-    <h3 class="red-text">1d. General Evidence</h3>
-        <p>
-            {{ form.evidence.label }}
-            {{ form.evidence(class_="form-control") }} 
-        </p>
-
-
-        {% if form.evidence.errors %}
-            <ul class="errors">
-                {% for error in form.evidence.errors %}
-                    <li>{{ error }}</li>
-                {% endfor %}
-            </ul>
-        {% endif %}
-
-
--->
       <p>
-          <a class="nav-link" href="{{ url_for('registry.entryViolations') }}">
-            <input type="submit" id="saveNext" class="btn btn-primary" value="Save and Next">
+          <a class="nav-link" href="{{ url_for('registry.entryViolations', type=type) }}">
+            <input type="submit" id="saveNext" class="btn btn-primary" value="Select Violations">
           </a>
       </p>
     </form>

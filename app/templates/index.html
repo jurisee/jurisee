@@ -49,8 +49,8 @@
             <h2 class="red-text">Registry</h2>
             <p>We are collecting reports of corruption (which you can provide anonymously) and tracking official complaints to bring transparency and accountability to corrupt players and oversight bodies.</p>
             <a href="{{ url_for('registry.index') }}"><button type="button" class="btn btn-lg btn-outline-dark px-4 me-sm-3 fw-bold">Find an Offender</button></a>
-            <a href="{{ url_for('registry.addReport') }}"><button type="button" class="btn btn-lg btn-outline-dark px-4 me-sm-3 fw-bold">Report an Offender</button></a>
-            <a href="{{ url_for('registry.addGrievance') }}"><button type="button" class="btn btn-outline-dark btn-lg px-4 me-sm-3 fw-bold">File a Grievance</button></a>
+            <a href="{{ url_for('registry.addReport', type='report') }}"><button type="button" class="btn btn-lg btn-outline-dark px-4 me-sm-3 fw-bold">Report an Offender</button></a>
+            <a href="{{ url_for('registry.addReport', type='grievance') }}"><button type="button" class="btn btn-outline-dark btn-lg px-4 me-sm-3 fw-bold">File a Grievance</button></a>
         </div>
         </div>
 

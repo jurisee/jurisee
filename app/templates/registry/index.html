@@ -25,22 +25,28 @@
 <table class="table">
   <thead class="thead-light">
     <tr>
+      <th scope="col"></th>
       <th scope="col">Name</th>
       <th scope="col">Role</th>
       <th scope="col">State</th>
       <th scope="col">Type</th>
-      <th scope="col"></th>
+
       <th></th>
     </tr>
   </thead>
   <tbody>
         {% for report in reports %}
             <tr scope="row">
-                <td>{{ report.badActorId}}</td>
-                <td>{{ report.badActorType}}</td>
+                {% if report.reportType == 'Grievance' %}
+                    <td><a href="{{ url_for('registry.viewGrievance', report_id=report.id) }}">View</a></td>
+                {% endif %}
+                {% if report.reportType == 'Report' %}
+                    <td><a href="{{ url_for('registry.viewReport', report_id=report.id) }}">View</a></td>
+                {% endif %}
+                <td>{{ report.actor.fName}} {{ report.actor.lName}}</td>
+                <td>{{ report.role.actorType }}</td>
                 <td>{{ report.states}}</td>
                 <td>{{ report.reportType}}</td>
-                <td><a href="">View</a></td>
             </tr>
         {% endfor %}
   </tbody>
@@ -51,10 +57,10 @@
     <div class="card-body">
     <h3 class="red-text">Share a report</h3>
     <p class="card-text">If you experienced or know of abuses alert others! You can file a public report anonymously. </p>
-    <a href="{{ url_for('registry.addReport') }}"><button type="button" class="btn btn-outline-dark w-100 btn-lg px-4 me-sm-3 fw-bold">Report an Offender</button></a>
+    <a href="{{ url_for('registry.addReport', type='report') }}"><button type="button" class="btn btn-outline-dark w-100 btn-lg px-4 me-sm-3 fw-bold">Report an Offender</button></a>
     <h3 class="red-text">File a Grievance</h3>
     <p>File a formal grievance with oversight bodies and organizations. Juri See guides you through the process. Filing a grievance in partnership with Juri See ensures there is an independent, verifiable record of the complaints filed. </p>
-    <a href="{{ url_for('registry.addGrievance') }}"><button type="button" class="btn btn-outline-dark w-100 btn-lg px-4 me-sm-3 fw-bold">File a Grievance</button></a>
+    <a href="{{ url_for('registry.addReport', type='grievance') }}"><button type="button" class="btn btn-outline-dark w-100 btn-lg px-4 me-sm-3 fw-bold">File a Grievance</button></a>
     </div>
     </div>
 

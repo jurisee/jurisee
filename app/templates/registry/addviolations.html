@@ -9,14 +9,14 @@
 
 <div class="col">
     <span class="title pgTitle">
-        <h1>{% block title %} Report an Offender{% endblock %}</h1>
+        <h1>{{ title }}</h1>
     </span>
-    <p>Identify any acts that violate laws related to the right to be given notice, and the right to know what you are accused of and to defend yourself <i>before</i> you are deprived of your rights.</p>
+    <p>Identify any acts that violate laws related to {{ category.category }}</p>
  <ul class="list-group list-group-horizontal-sm text-center w-100 d-flex">
   <li class="list-group-item w-100">Step 1: <br>General</li>
   <li class="list-group-item w-100 active">Step 2:<br>Violations</li>
   <li class="list-group-item w-100">Step 3:<br>Review</li>
-  <li class="list-group-item w-100">Step 4: <br>Publish</li>
+  <li class="list-group-item w-100">Step 4: <br>Next Steps</li>
 </ul>
 <br>
     <h3 class="red-text">{{ category.category }}</h3>
