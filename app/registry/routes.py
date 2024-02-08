@@ -70,7 +70,7 @@ def addReport(type):
     form.badActorType.choices += [(item.id, item.actorType) for item in ActorType.query.order_by('actorType')]
     form.county.choices = [("", "")]
     form.county.choices += [(item.id, item.county) for item in Counties.query.all()]
-    form.states.choices = [("NY","NY")]
+    form.states.choices = [("32","NY")]
     if type == "report":
         del form.caseNum
     if request.method == 'POST':
