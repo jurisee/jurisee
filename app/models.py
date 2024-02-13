@@ -1,6 +1,8 @@
 from app.extensions import db
 from app.extensions import ma
 from datetime import datetime
+from sqlalchemy import DateTime
+from sqlalchemy.sql import func
 
 
 #hold table for news articles
@@ -48,10 +50,10 @@ class Report(db.Model):
     caseNum = db.Column(db.String(100))
     badActorId = db.Column(db.Integer, db.ForeignKey('actors.id'))
     actorType = db.Column(db.Integer, db.ForeignKey('actor_type.id'))
-    states = db.Column(db.Integer, db.ForeignKey('states.id'))
+    states = db.Column(db.String(4))
     county = db.Column(db.Integer, db.ForeignKey('counties.id'))
     court = db.Column(db.String(100))
-    date_created = db.Column(db.DateTime, default=datetime.utcnow)
+    date_created = db.Column(db.DateTime, default=datetime.utcnow, server_default=func.now(), nullable=False)
     sent = db.Column(db.Boolean, default=False)
     published = db.Column(db.Boolean, default=False)
     highIncome = db.Column(db.Boolean, default=False)
@@ -134,13 +136,12 @@ class ActorOrgs(db.Model):
     def __repr__(self):
         return f'<ActorOrgs "{self.id}">'
 
-#start for dynamic form choices
+#start for dynamic form choices / categories
 class States(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     abbrv = db.Column(db.String(10), nullable=False)
     name = db.Column(db.String(100), nullable=False)
     active = db.Column(db.Boolean())
-    reports = db.relationship('Report', backref='state')
 
     def __repr__(self):
         return f'<States "{self.id}">'
@@ -148,7 +149,7 @@ class States(db.Model):
 class Counties(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     county = db.Column(db.String(100), nullable=False)
-    state = db.Column(db.Integer,nullable=False)
+    state = db.Column(db.String(10),nullable=False)
     reports = db.relationship('Report', backref='counties')
 
     def __repr__(self):

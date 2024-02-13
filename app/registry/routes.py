@@ -46,7 +46,7 @@ def addViolations(type, vio_id):
         rId =record.id
         record.summary = form.summary.data
         record.title = record.reportType[0]  + str(rId) + "_" + str(vId) + "_" + month + year + " " + category.category
-        record.vioCategoryId = vId
+        record.reportCategory = vId
         db.session.commit()
 
         for val in form.violations.data:
@@ -70,7 +70,7 @@ def addReport(type):
     form.badActorType.choices += [(item.id, item.actorType) for item in ActorType.query.order_by('actorType')]
     form.county.choices = [("", "")]
     form.county.choices += [(item.id, item.county) for item in Counties.query.all()]
-    form.states.choices = [("32","NY")]
+    form.states.choices = [("NY","NY")]
     if type == "report":
         del form.caseNum
     if request.method == 'POST':
@@ -117,7 +117,7 @@ def viewReport(report_id):
     # get userID from session data and find last report ID {REMEMBER ADD THIS IN WHEN SESSIONS ADDED JUST DUMMY HERE!!!!!!}}
     rId = report_id
     uId = 3
-    report = Report.query.filter(Report.submitterId == 3).order_by(Report.id.desc()).first()
+    report = Report.query.filter(Report.id == rId).order_by(Report.id.desc()).first()
     violations = ReportViolations.query.filter(ReportViolations.reportId == rId).all()
     return render_template('registry/viewreport.html', report=report, violations = violations)
 
