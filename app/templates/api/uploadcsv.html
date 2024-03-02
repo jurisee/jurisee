@@ -3,21 +3,56 @@
 {% block content %}
 <div class="container blockMargin">
 <div class="row">
-<div class="col-sm-1">
-</div>
 
-<div class="col">
+    <div class="col-sm-2">
 
-            <form method='post' action='/' enctype='multipart/form-data'>
-              Upload a csv file: <input type='file' name='file'>
-              <input type='submit' value='Upload'>
-            </form>
+    </div>
 
-</div>
+    <div class="col-sm-8">
+        <h1>Intake</h1>
+        <form method="POST" enctype="multipart/form-data">
+        {{ form.csrf_token }}
 
-<div class="col-sm-1">
-</div>
+        <p>
+            <h5>{{ form.tableType.label(class_="form-check-label") }}</h5>
+            {{ form.tableType(class_="list-group form-group") }}
+        </p>
 
+        {% if form.tableType.errors %}
+            <ul class="errors">
+                {% for error in form.tableType.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+
+
+                <p>
+        {{ form.csvFile.label }}
+        {{ form.csvFile(class_="form-control") }}
+        </p>
+        {% if form.csvFile.errors %}
+            <ul class="errors">
+                {% for error in form.csvFile.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+
+
+        <p>
+            <input type="submit" class="btn btn-primary" value="Save">
+        </p>
+
+        </form>
+    </div>
+
+    <div class="col-sm-2">
+
+
+    </div>
 
 </div>
 </div>

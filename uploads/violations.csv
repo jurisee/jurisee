@@ -1,0 +1,224 @@
+id,violation,violationTypeId
+1,"A TOP or OSC—that removes significant rights (custody, housing, child support, etc.)—is granted without notice to the affected party",1
+2,"A TOP or OSC—that removes significant rights (custody, housing, child support, etc.)—is immediately granted without imminent harm / exigent circumstances",1
+3,"Lawyer-only, off record sessions are held in which lawyers present claims and argue positions",1
+4,Denied the right to be in attendance at court appearances and hearings,1
+5,"Significant rights are removed (physical or legal custody, housing, child support, etc.) as an outcome of a lawyer-only, off-record session",1
+6,Custodial rights are removed without a lawyer present,1
+7,Litigant not informed of a court appearance(s),1
+8,Locked out of court rooms during public hours,1
+9,Judge holds trial dates with one party missing,1
+10,"An emergency TOP or OSC—that removes significant rights (physical or legal custody, child support)— granted without evidence of imminent harm or “exigent circumstances”",2
+11,"A TOP or OSC—that removes significant rights (physical or legal custody, housing, child support, etc.)—is granted without an evidentiary hearing",2
+12,"A TOP or OSC—that removes significant rights (physical or legal custody, housing, child support)—is granted without an immediate trial scheduled",2
+13,"A TOP or OSC—that removes significant rights (physical or legal custody, housing, child support)—is granted without evidence of unfit parent",2
+14,"A TOP or OSC—that removes significant rights (physical or legal custody, housing, child support)—is automatically renewed without trial or evidentiary hearing occurring",2
+15,"A TOP or OSC—that removes significant rights (physical or legal custody, housing, child support)—is granted without any evidence from the requestor",2
+16,"A TOP or OSC—that removes significant rights (physical or legal custody, housing, child support)—is granted with irrelevant or notably inadequate evidence",2
+17,"A TOP or OSC—that removes significant rights (custody, housing, child support)—is granted based on proven perjury",2
+18,"A TOP or OSC—that removes significant rights (physical or legal custody, housing, child support)—is granted based on frivolous claims",2
+19,A TOP or OSC that changes status quo is granted without best interest analysis for child,2
+20,A TOP or OSC is granted without an expiration date,2
+21,Custodial changes are made based on an OSC or TOP without also having a petition filed within 10 days,2
+22,"A TOP or OSC is granted without cause of action, exigent circumstances or evidence cited on the temporary order",2
+23,Judge does not dismiss an OSC or TOP motion when the motion does not have a legal basis,2
+24,Judge does not dismiss an OSC or TOP motion when the motion does not meet statutory requirements,2
+25,Judge does not dismiss an OSC or TOP motion when there is no evidence provided,2
+26,Judge does not dismiss an OSC or TOP motion when the basis for TOP is moot or proven false,2
+27,Supervised visits are temporarily ordered without evidentiary hearing or trial,3
+28,Supervised visits are ordered without evidence of abuse or neglect,3
+29,Supervisor fees that are unrealistic for income levels are court ordered to be able to visit with one’s child,3
+30,Court orders zero contact between parent and child without evidence of NY standard of abuse or neglect,3
+31,Parent held in contempt for OSC and TOPs that were never tested or proven with evidentiary hearing or trial,3
+32,Parent put in jail for OSC and TOPs that were never tested or proven with evidentiary hearing or trial,3
+33,"Parents are put in jail as immediate resort for non violent, non criminal actions",3
+34,Judge refuses adjournment when significant medical or trauma events occur,3
+35,Unnecessary or fabricated defaults are used as basis for significant custodial judgements,3
+36,Punitive or unachievable child support fees are ordered,3
+37,Excessive child support fees are ordered of a lesser monied spouse to be given to a high income litigant,3
+38,Litigant forced to pay AFC or evaluator fees that exceed the capacity of income and assets,3
+39,"Orders written with excessively restrictive geo-boundaries (e.g., city limits, county limits) without cause on record",3
+40,Orders written that require immediate jail time in order to circumvent statutory requirements and due process for contempt proceedings,3
+41,Punitive orders written by court if proper procedure or one’s rights are requested,3
+42,Litigants and children are not allowed to travel to see family during proceedings that go on for years,3
+43,"Litigants and children not allowed to attend significant life events (funerals, weddings, births of family members, etc.) without cause on record",3
+44,Litigants have their US and foreign passports taken from them,3
+45,Judge demonstrates inappropriate knowledge of the case,4
+46,Judge demonstrates lack of knowledge of or disregard for relevant law,4
+47,Judge speaks disrespectfully to litigant,4
+48,Judge does not allow a litigant to speak or speaks over them,4
+49,Judge does not allow a litigant to properly place their position and opposition on the record,4
+50,Judge does not provide equal time between litigants,4
+51,Judge intentionally goes off-record for matters of substance / consequence,4
+52,Judge demonstrates extreme favor for one litigant over the other,4
+53,"Biased statements are made by judge (e.g., race, age, creed, color, sex, sexual orientation, religion, nationality, disability, etc.)",5
+54,"Biased statements from other legal professionals is allowed by the judge (e.g., race, age, creed, color, sex, sexual orientation, religion, nationality, disability, etc.)",5
+55,Parental rights removed on the basis of biased determinations,5
+56,Discriminatory behaviors by one party against the other party or the children,5
+57,One party pays for AFC fees,5
+58,One party pays for Evaluator fees,5
+59,One party is wealthy and other party is having to act pro se,5
+60,One party is wealthy and other party is assigned 18 attorney,5
+61,Parental rights removed on basis of alleged mental illness with out demonstration of danger to self / others,5
+62,The court ignores that one party has cut other party off from housing and assets,5
+63,The motions or requests of one party ignored by the court while other party’s are routinely allowed,5
+64,Custody rights removed without a lawyer,6
+65,The court forces a pro se litigant to conduct proceedings that they are not qualified without providing clarification of rights and purpose of court actions,6
+66,Pro Se litigant’s lack of legal expertise is intentionally wielded against them,6
+67,The court refuses to grant money for lawyer to lesser monied litigant in proceedings that involve a party of very high wealth,6
+68,A litigant is not granted time to find counsel,6
+69,The court ignores or denies poor person request without cause on record,6
+70,The court grants inequitable legal fees in a case in that involves high wealth marital assets or one high wealth party,6
+71,Parents rights removed on basis of alleged mentally ill by the court are not provided a lawyer,6
+72,"Custodial rights removed on basis of mental illness without providing for: “investigative, expert and other services necessary for an adequate defense”",6
+73,Court does not follow standard rules and procedures and refuses to,6
+74,Court refuses to explains actions that do not follow standard rules and procedures,6
+75,An Ex-parte order is filed without proper assignment of a new case number,7
+76,Court proceedings are begun by improperly using a “reinstated” case instead of following proper initiation procedures,7
+77,"Statutory timelines for pre-conference, discovery and trial are not tracked",7
+78,Litigant denied or obstructed from access to the court’s record,7
+79,"Court records are altered without citation of cause (e.g. documents deleted, changes to calendar, etc.)",7
+80,Court appearance is not recorded on the docket,7
+81,Court appearances notation or dates are intentionally or grossly inaccurate on the docket,7
+82,Court transcripts are altered without citation of cause,7
+83,"Judge does not file appointee assignments with the Office of the Attorney for the Child (e.g., evaluators, AFCs, supervisors)",7
+84,"Judge does not report an assignment, per Part 36 Rules",7
+85,Judge does not notified the litigants of the purpose of a court appearance or hearing,7
+86,Expert is assigned “off-list” without just cause filed with Office of Attorney for the Child,7
+87,Judicial appointment decisions made off-record,7
+89,Proceedings exceed statutory time limits (anything exceeding 7.5 months),8
+90,There is no “pre-conference” identified on the court’s recorded schedule within 45 days of “judicial intervention” (first motion before the court),8
+91,Financial documents are not provided within 35 days of the court case being filed,8
+92,A “pre-conference” never occurred,8
+93,"A trial has not been scheduled, even though 6 months has passed.",8
+94,Rights are removed without evidentiary hearing or trial,8
+95,A trial was not expedited (held “within days”) after custody rights were “emergency” removed by temporary order,8
+96,Significant decisions are not placed in writing after 60 days are past,8
+97,A forensic evaluation exceeds 60 days,8
+98,Investigations conducted (e.g. CPS/ACS) exceed 60 days,8
+99,Trial is conducted without discovery,8
+100,Trial is denied,8
+101,The issues that are to be heard at trial have not been formally “settled” (placed in an order on record),8
+102,"If you are in Supreme Court, multiple court appearances occur and yet discovery (formal evidence sharing) has not been scheduled",8
+103,"If you are in Supreme Court, discovery (formal evidence sharing) has never occurred",8
+104,"In you are in family court, there are claims of abuse or neglect and yet no discovery  (formal evidence sharing) is scheduled and has never occurred",8
+105,A note of issue and certificate of readiness is filed by the other party before discovery occurs,8
+106,Custody and financials are “bifurcated” and custody is heard first,8
+107,Existing evidence ignored,9
+108,Professional opinions ignored,9
+109,CPS and ACS reports ignored,9
+110,Denied right to present evidence in defense,9
+111,Obstructed from placing evidence on record,9
+112,Discovery not ordered and fact-finding requests ignored or denied,9
+113,Denied subpoenas for relevant evidence,9
+114,Requests for evidence of other parties not responded to without penalty,9
+115,Requests for evidence of evaluator or AFC not responded to without penalty,9
+116,Right to see evidence against you denied,9
+117,Judge refuses to compel evidence,9
+118,Unsubstantiated hearsay and character assignation by the opposing party is treated as evidence,9
+119,Judge allows blatant perjury,9
+120,AFC or court appointee’s opinions is substituted for evidence,9
+121,Judge refuses to compel evidence from evaluator or AFC,9
+122,Court decision based on hearsay from opposing party,9
+123,Custodial rights removed without any evidence,9
+124,Clear and convincing standard of unfit parent not met yet custodial rights removed,9
+125,NY definition of abuse not met yet custodial rights recommend,9
+126,NY definition of neglect met yet custodial rights removed,9
+127,Custodial rights removed based on “evidence” that is irrelevant to the claims made,9
+128,Supervised visits ordered without just cause on record,9
+129,"History of physical, sexual or psychological abuse of child(ren) ignored or minimized",10
+130,"History of medical, physical and social neglect of child(ren) ignored or minimized",10
+131,History of domestic violence against one parent ignored or minimized,10
+132,Coercive control ignored or minimized,10
+133,Intentional interference with parenting rights ignored,10
+134,"Contemptuous behavior of one parent, that blatantly violates the court order is ignored",10
+135,History of ACS and CPS cases against one parent is ignored,10
+136,"Judge blocks evidence of physical, sexual or psychological abuse of child(ren) from being placed on the record",10
+137,Judge blocks evidence of domestic violence from being placed on the record,10
+139,AFC acts as witness,11
+140,AFC substitutes judgement for the child,11
+141,AFC demonstrates blatant alignment with favored party,11
+142,AFC lies to the court,11
+143,AFC does not provide motions or supporting doucmentation for custodial requests made of court,11
+144,AFC does not cite or submit supporting evidence for claims and positions,11
+145,AFC refuses to provide evidence,11
+146,AFC assumes authority for the care and management of decisions of the child(ren),11
+147,"AFC making decisions on medical, or mental health providers for family",11
+148,Custodial decisions made on sole basis of AFC opinion,11
+149,AFC does not report their workloads to their respective Appellate Department’s AFC Office,11
+150,AFC double bills,11
+151,AFC does not provide accurate and complete hours accounting,11
+152,AFC does not provide bills in a timely period (at least every 60 days),11
+153,AFC has ex parte communications with opposing party,11
+154,A forensic evaluation is ordered,12
+155,A forensic evaluation is ordered more than once,12
+156,A forensic evaluation is required even when one party opposes,12
+157,A forensic evaluation is ordered when a forensics has no basis to prove or disprove the claims before the court,12
+158,A forensic evaluation is ordered instead of discovery,12
+159,A mental health evaluation is ordered,12
+160,Mental health evaluation is repeat ordered,12
+161,A mental health evaluation was ordered of a litigant without any evidence of mental illness on record,12
+162,A mental health evaluation is ordered when such an evaluation provides no basis to prove or disprove the claims before the court,12
+163,A mental health evaluation is required even when litigant refuses and there is no evidence on record of illness,12
+164,"The court appointee selected by the court is “off-list” (i.e., not on NY Appellate approved list of evaluators)",12
+165,The court appointee does not have proven expertise in the area they are evaluating,12
+166,The underlying data and methodology of evaluator’s reports is not given,12
+167,Evaluator does not provide the underlying data and methodology when asked,12
+168,“Collaterals” (witnesses) interviewed by evaluator are not cited,12
+169,“Collaterals” (witnesses) interviewed by evaluator are all biased towards one party,12
+170,Evaluator does not provide a list of “Collaterals” (witnesses) when asked,12
+171,Evaluation has no time limit on the order,12
+172,The order for the evaluation or mental health does not identify the purpose and judicial decisions the evaluation is intended to support,12
+173,Evaluator does not seek clarification for the purpose or decisions of their evaluation if it is not identified by the court,12
+174,"Evaluator asks inappropriate questions or questions that do not relate to their court appointments (e.g. questions about your sexual history, questions about court proceedings, etc.)",12
+175,Evaluator engages in ex parte communications with the court,12
+176,Evaluator does not follow legitimate scientific processes and procedures,12
+177,Evaluator’s report provides unsubstantiated character claims instead of providing mental health determinations,12
+178,Evaluator suggests judicial actions instead of providing mental health determinations,12
+179,Expert recommends supervised visits,12
+180,Evaluator lies or misrepresents facts to the court,12
+181,"Evaluator ignores or minimizes sexual, physical or psychological abuse of child(ren)",12
+182,Evaluator ignores or minimizes domestic violence,12
+183,Evaluator ignores or misrepresents evidence,12
+184,Evaluator ignores or misrepresents other professionals’ opinions,12
+185,Judge makes an unnecessary assignment of AFC,13
+186,Judge makes an unnecessary assignment of “expert”,13
+187,Judge makes an unnecessary assignment of supervised visitation,13
+188,"Judge demonstrates nepotism and favoritism in appointments of AFC, GAL, “expert,” or supervisors (repeat appointments)",13
+189,Conflicts of interests that exist are ignored,13
+190,"“Private” appointments of AFCs, Evaluators, and Supervisors are made without a requisite financial documentation from both parties",13
+191,Appointee’s rate is set without without financial review,13
+192,Appointee’s hourly rate rate is far outside statutory recommended prices,13
+193,Appointee sets own rate,13
+194,Evaluator’s testimony is accepted even when de-paneled or history of bad behavior,13
+195,AFC is allowed to act as witness,13
+196,Evaluator assigned not on AD list of approved evaluators,13
+197,Judge attempts to get litigant to settle to restricted access to own children,14
+198,Judge states litigant can have trial but they have already decided negatively against them,14
+199,Judge threatens contempt for issues that are known to not be happening,14
+200,"Judge threatens restraining orders or loss of financial support, for raising objections, not settling, etc.",14
+201,Judge threatens restraining orders or loss of financial support for reporting abuse of children or self,14
+202,AFC threatens your access to your children if you report contempt of other party,14
+203,AFC states your safety concerns  you express about your children is a reason to speak negatively to the court about you,14
+204,Evaluator threatens your access to you children,14
+205,Evaluator states that your objections are cause for them to find negatively against you,14
+206,AFC threatens contempt for fees you do not have the income of assets to pay,14
+207,Judge threatens contempt for fees you do not have the income of assets to pay,14
+208,Evaluator threatens bad decision for fees,14
+209,Bailiff threatens litigant,14
+210,Judge asks Bailiff to threaten litigant,14
+211,Bailiff threatens litigant,14
+212,AFC threatens to file contempt claims for unpaid bills that all parties and the court know litigant cannot pay,14
+213,Court appointee threatens to file claims for unpaid bills that all parties and the court know litigant cannot pay,14
+214,The court threatens that you will not see your child if you do not have give up a right or will not settle,14
+215,Court threatens contempt for if you oppose on record the assignment of a court evaluator,14
+216,Litigant ordered not to not speak about case on social media (gag order goes beyond not being able to mention the children),15
+217,Judge does not allow outside public into the courtroom,15
+218,Judge does not allow court watchers into the court room,15
+219,Judge does not allow journalists into court room,15
+220,Judge places a gatekeeper on litigant so they cannot file motions,15
+221,Judge writes order that allows a supervisor to monitor the words of a litigant,15
+222,"Judge engaged in ex parte communications with AFC, evaluator or other party",16
+223,"AFC engaged in ex parte communications with other party, or evaluator",16
+224,Court appointed evaluator engaged in ex parte communications with other party or AFC,16
+225,AFC and opposing counsel engage in communications during court proceedings,16

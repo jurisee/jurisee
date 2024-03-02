@@ -1,13 +1,15 @@
 from flask import Flask,jsonify,render_template, request, url_for, flash, redirect
+from werkzeug.utils import secure_filename
+import csv
+import os
 from app.api import bp
 from app.extensions import db
-from app.models import Actors, ActorType, Article, States
-from datetime import datetime
+from app.models import Actors, ActorType, Violations, Article, VioCategory, Orgs, States, Counties
+from app.api.forms import AddTable
 import simplejson as json
 from app.models import actors_schema
 from sqlalchemy import or_
 from sqlalchemy.sql.operators import ilike_op,like_op
-
 
 @bp.route('/returnnews', methods = ['GET']) 
 def ReturnNews(): 
@@ -32,16 +34,51 @@ def searchActors(search_val):
 
 @bp.route('/uploadcsv', methods=('GET','POST'))
 def uploadCSV():
-    if request.method == 'POST':
-        actorType = ActorType(id=14, actorType='test')
-        db.session.add(actorType)
-        db.session.commit()
-        csv_file = request.files['file']
-        csv_file = TextIOWrapper(csv_file, encoding='utf-8')
-        csv_reader = csv.reader(csv_file, delimiter=',')
-        #for row in csv_reader:
-            #actorType = ActorType(id=14, actorType='test')
-           # db.session.add(actorType)
-           # db.session.commit()
+    form = AddTable()
+    if form.validate_on_submit():
+        file = form.csvFile.data
+        filename = secure_filename(file.filename)
+        file.save('uploads/' + filename)
+        with open('uploads/' + filename, newline = "", encoding = 'utf-8') as csvfile:
+            csv_reader = csv.reader(csvfile, delimiter = ',')
+            tableType = form.tableType.data
+            if tableType == 'actor_type':
+                for row in csv_reader:
+                    entry = ActorType(actorType=row[1])
+                    db.session.add(entry)
+                    db.session.commit()
+            elif tableType == 'actors':
+                for row in csv_reader:
+                    entry = Actors(fName=row[1], lName=row[2])
+                    db.session.add(entry)
+                    db.session.commit()
+            elif tableType == 'counties':
+                for row in csv_reader:
+                    entry = Counties(county=row[1], state=row[2])
+                    db.session.add(entry)
+                    db.session.commit()
+            elif tableType == 'orgs':
+                for row in csv_reader:
+                    entry = Orgs(name=row[1], address1=row[2], address2=row[3], city=row[4], state=row[5],zipcode=row[6], phone=row[7], orgEmail=row[8], website=row[9])
+                    db.session.add(entry)
+                    db.session.commit()
+            elif tableType == 'states':
+                for row in csv_reader:
+                    entry = States(abbrv=row[1], name=row[2])
+                    db.session.add(entry)
+                    db.session.commit()
+            elif tableType == 'vio_category':
+                for row in csv_reader:
+                    entry = VioCategory(category=row[1])
+                    db.session.add(entry)
+                    db.session.commit()
+            elif tableType == 'violations':
+                for row in csv_reader:
+                    entry = Violations(violation=row[1], violationTypeId=row[2])
+                    db.session.add(entry)
+                    db.session.commit()
+            else:
+                "table type not found"
+
         return redirect(url_for('main.index'))
-    return render_template('api/uploadcsv.html')
+    return render_template('api/uploadcsv.html', form=form)
