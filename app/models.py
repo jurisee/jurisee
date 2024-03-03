@@ -3,6 +3,7 @@ from app.extensions import ma
 from datetime import datetime
 from sqlalchemy import DateTime
 from sqlalchemy.sql import func
+from flask_marshmallow import Marshmallow
 
 
 #hold table for news articles

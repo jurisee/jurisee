@@ -1,6 +1,5 @@
 from flask import render_template
 from app.main import bp
-from app.extensions import db
 from app.main.forms import RegisterForm
 
 @bp.route('/', methods=('GET', 'POST'))
