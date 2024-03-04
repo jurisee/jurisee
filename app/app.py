@@ -30,6 +30,5 @@ app.register_blueprint(api_bp, url_prefix='/api')
 from app.actions import bp as actions_bp
 app.register_blueprint(actions_bp, url_prefix='/actions')
 
-
 if __name__ == "__main__":
     app.run(host='0.0.0.0')

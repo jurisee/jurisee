@@ -20,11 +20,11 @@ class Article(db.Model):
 #start registry tables
 class Actors(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    fName = db.Column(db.String(150))
-    lName = db.Column(db.String(150))
+    fName = db.Column(db.String(160))
+    lName = db.Column(db.String(160))
     FUID = db.Column(db.String(50))
     licenseNum = db.Column(db.String(50))
-    email = db.Column(db.String(50))
+    email = db.Column(db.String(256))
     dateCreated = db.Column(db.DateTime, default=datetime.utcnow)
     reports = db.relationship('Report', backref='actor')
     orgs = db.relationship('ActorOrgs', backref='actor')
@@ -45,7 +45,7 @@ class Report(db.Model):
     submitterId = db.Column(db.Integer)
     reportType = db.Column(db.String(100), nullable=False)
     reportCategory = db.Column(db.Integer, db.ForeignKey('vio_category.id'))
-    title = db.Column(db.String(100))
+    title = db.Column(db.String(256))
     summary = db.Column(db.Text)
     hideSummary = db.Column(db.Boolean)
     caseNum = db.Column(db.String(100))
@@ -76,8 +76,8 @@ class ActorType(db.Model):
 
 class ReportViolations(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    reportId = db.Column(db.Integer, db.ForeignKey('report.id'))
-    violationId = db.Column(db.Integer, db.ForeignKey('violations.id'))
+    reportId = db.Column(db.Integer(50), db.ForeignKey('report.id'))
+    violationId = db.Column(db.Integer(10), db.ForeignKey('violations.id'))
     date_created = db.Column(db.DateTime, default=datetime.utcnow)
     
     def __repr__(self):
@@ -85,8 +85,8 @@ class ReportViolations(db.Model):
 
 class ViolationsSum(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    reportId = db.Column(db.Integer, nullable=False)
-    vioCategoryId = db.Column(db.Integer, nullable=False)
+    reportId = db.Column(db.Integer(50), nullable=False)
+    vioCategoryId = db.Column(db.Integer(10), nullable=False)
     summary = db.Column(db.Text)
     date_created = db.Column(db.DateTime, default=datetime.utcnow)
     
@@ -95,8 +95,8 @@ class ViolationsSum(db.Model):
 
 class Violations(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    violation = db.Column(db.String(100), nullable=False)
-    violationTypeId = db.Column(db.Integer)
+    violation = db.Column(db.String(512), nullable=False)
+    violationTypeId = db.Column(db.Integer(10))
     reportViolations = db.relationship('ReportViolations', backref='violation')
 
     def __repr__(self):
@@ -112,15 +112,15 @@ class VioCategory(db.Model):
 
 class Orgs(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    name = db.Column(db.String(150))
-    address1 = db.Column(db.String(150))
-    address2 = db.Column(db.String(150))
-    city = db.Column(db.String(150))
+    name = db.Column(db.String(160))
+    address1 = db.Column(db.String(256))
+    address2 = db.Column(db.String(256))
+    city = db.Column(db.String(160))
     state = db.Column(db.String(4))
-    zipcode = db.Column(db.Integer)
+    zipcode = db.Column(db.Integer(50))
     phone = db.Column(db.String(50))
-    orgEmail = db.Column(db.String(50))
-    website = db.Column(db.String(150))
+    orgEmail = db.Column(db.String(256))
+    website = db.Column(db.String(256))
     dateCreated = db.Column(db.DateTime, default=datetime.utcnow)
     actorOrgs = db.relationship('ActorOrgs', backref='orgs')
 
