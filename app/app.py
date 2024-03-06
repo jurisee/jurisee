@@ -1,4 +1,3 @@
-from config import Config
 from app.extensions import db
 from app.extensions import ma
 from app.extensions import api
