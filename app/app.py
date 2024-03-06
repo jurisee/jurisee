@@ -4,9 +4,10 @@ from extensions import api
 from flask import Flask
 from flask_marshmallow import Marshmallow
 from flask_restful import Api, Resource
+from config import Config
 
 app = Flask(__name__)
-app.config.from_object(config_class)
+app.config.from_object(config)
 
     # Initialize Flask extensions here
 db.init_app(app)
