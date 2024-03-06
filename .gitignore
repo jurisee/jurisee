@@ -1,5 +1,7 @@
 app.db
 config.py
+.idea
+
 
 # Compiled source #
 ###################
@@ -9,7 +11,7 @@ config.py
 *.exe
 *.o
 *.so
-*.pyc 
+*.pyc
 
 
 # Packages #
