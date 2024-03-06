@@ -1,6 +1,6 @@
-from app.extensions import db
-from app.extensions import ma
-from app.extensions import api
+from extensions import db
+from extensions import ma
+from extensions import api
 from flask import Flask
 from flask_marshmallow import Marshmallow
 from flask_restful import Api, Resource
