@@ -1,3 +1,5 @@
+import os
+import pathlib
 from config import Config
 from app.extensions import db
 from app.extensions import ma
@@ -10,7 +12,10 @@ from flask_restful import Api, Resource
 
 app = Flask(__name__)
 
-app.config.from_pyfile('../config.py')
+
+d = os.path.dirname(os.getcwd())
+CONFIG_FILE = os.path.join(d, 'jurisee/config.py')
+app.config.from_pyfile(CONFIG_FILE)
 app.config.from_object(Config)
 
     # Initialize Flask extensions here
