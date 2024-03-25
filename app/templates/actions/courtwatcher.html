@@ -1,0 +1,722 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container blockMargin">
+<div class="row">
+
+    <div class="col-sm-2">
+
+    </div>
+
+    <div class="col-sm-8">
+        <h1>Court Watcher</h1>
+        <form method="POST">
+        {{ form.csrf_token }}
+
+        <h3 class="red-text">Case Information</h3>
+        <p>
+        {{ form.judgeName.label }}
+        {{ form.judgeName(class_="form-control") }}
+        </p>
+        {% if form.judgeName.errors %}
+            <ul class="errors">
+                {% for error in form.judgeName.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        <p>
+        {{ form.afcName.label }}
+        {{ form.afcName(class_="form-control") }}
+        </p>
+        {% if form.afcName.errors %}
+            <ul class="errors">
+                {% for error in form.afcName.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        <p>
+        {{ form.ocName.label }}
+        {{ form.ocName(class_="form-control") }}
+        </p>
+        {% if form.ocName.errors %}
+            <ul class="errors">
+                {% for error in form.ocName.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        <p>
+        {{ form.slcName.label }}
+        {{ form.slcName(class_="form-control") }}
+        </p>
+        {% if form.slcName.errors %}
+            <ul class="errors">
+                {% for error in form.slcName.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        <h3 class="red-text">Violation</h3>
+        <h4>One Party Proceedings</h4>
+        <p>
+        {{ form.noNotice.label }}
+        {{ form.noNotice(class_="form-check-input") }} Yes
+        </p>
+        {% if form.noNotice.errors %}
+            <ul class="errors">
+                {% for error in form.noNotice.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        <p>
+        {{ form.noEvidence.label }}
+        {{ form.noEvidence(class_="form-check-input") }} Yes
+        </p>
+        {% if form.noEvidence.errors %}
+            <ul class="errors">
+                {% for error in form.noEvidence.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        <p>
+        {{ form.noHarm.label }}
+        {{ form.noHarm(class_="form-check-input") }} Yes
+        </p>
+        {% if form.noHarm.errors %}
+            <ul class="errors">
+                {% for error in form.noHarm.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+         <p>
+        {{ form.noImmediateTrial.label }}
+        {{ form.noImmediateTrial(class_="form-check-input") }} Yes
+        </p>
+        {% if form.noImmediateTrial.errors %}
+            <ul class="errors">
+                {% for error in form.noImmediateTrial.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+         <p>
+        {{ form.renewedNoTrial.label }}
+        {{ form.renewedNoTrial(class_="form-check-input") }} Yes
+        </p>
+        {% if form.renewedNoTrial.errors %}
+            <ul class="errors">
+                {% for error in form.renewedNoTrial.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        <p>
+        {{ form.offRecord.label }}
+        {{ form.offRecord(class_="form-check-input") }} Yes
+        </p>
+        {% if form.offRecord.errors %}
+            <ul class="errors">
+                {% for error in form.offRecord.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        <p>
+        {{ form.exParteComm.label }}
+        {{ form.exParteComm(class_="form-check-input") }} Yes
+        </p>
+        {% if form.exParteComm.errors %}
+            <ul class="errors">
+                {% for error in form.exParteComm.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        <p>
+        {{ form.afcExParte.label }}
+        {{ form.afcExParte(class_="form-check-input") }} Yes
+        </p>
+        {% if form.afcExParte.errors %}
+            <ul class="errors">
+                {% for error in form.afcExParte.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+         <p>
+        {{ form.expertEngaged.label }}
+        {{ form.expertEngaged(class_="form-check-input") }} Yes
+        </p>
+        {% if form.expertEngaged.errors %}
+            <ul class="errors">
+                {% for error in form.expertEngaged.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        <p>
+        {{ form.description.label }}
+        {{ form.description(class_="form-select") }}
+        </p>
+        {% if form.description.errors %}
+            <ul class="errors">
+                {% for error in form.description.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        <h4>Judicial Ethics</h4>
+        <p>
+        {{ form.knowsCase.label }}
+        {{ form.knowsCase(class_="form-check-input") }} Yes
+        </p>
+        {% if form.knowsCase.errors %}
+            <ul class="errors">
+                {% for error in form.knowsCase.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        <p>
+        {{ form.disregard.label }}
+        {{ form.disregard(class_="form-check-input") }} Yes
+        </p>
+        {% if form.disregard.errors %}
+            <ul class="errors">
+                {% for error in form.disregard.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        <p>
+        {{ form.disrespect.label }}
+        {{ form.disrespect(class_="form-check-input") }} Yes
+        </p>
+        {% if form.disrespect.errors %}
+            <ul class="errors">
+                {% for error in form.disrespect.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+         <p>
+        {{ form.noSpeak.label }}
+        {{ form.noSpeak(class_="form-check-input") }} Yes
+        </p>
+        {% if form.noSpeak.errors %}
+            <ul class="errors">
+                {% for error in form.noSpeak.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+         <p>
+        {{ form.unequalTime.label }}
+        {{ form.unequalTime(class_="form-check-input") }} Yes
+        </p>
+        {% if form.unequalTime.errors %}
+            <ul class="errors">
+                {% for error in form.unequalTime.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+         <p>
+        {{ form.oRMatters.label }}
+        {{ form.oRMatters(class_="form-check-input") }} Yes
+        </p>
+        {% if form.oRMatters.errors %}
+            <ul class="errors">
+                {% for error in form.oRMatters.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+         <p>
+        {{ form.judgeFavor.label }}
+        {{ form.judgeFavor(class_="form-check-input") }} Yes
+        </p>
+        {% if form.judgeFavor.errors %}
+            <ul class="errors">
+                {% for error in form.judgeFavor.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+         <p>
+        {{ form.judgeBias.label }}
+        {{ form.judgeBias(class_="form-check-input") }} Yes
+        </p>
+        {% if form.judgeBias.errors %}
+            <ul class="errors">
+                {% for error in form.judgeBias.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        <p>
+        {{ form.courtBias.label }}
+        {{ form.courtBias(class_="form-check-input") }} Yes
+        </p>
+        {% if form.courtBias.errors %}
+            <ul class="errors">
+                {% for error in form.courtBias.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        <h5>Coersion</h5>
+        <p>
+        {{ form.access.label }}
+        {{ form.access(class_="form-check-input") }} Yes
+        </p>
+        {% if form.access.errors %}
+            <ul class="errors">
+                {% for error in form.access.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        <p>
+        {{ form.biasTrial.label }}
+        {{ form.biasTrial(class_="form-check-input") }} Yes
+        </p>
+        {% if form.biasTrial.errors %}
+            <ul class="errors">
+                {% for error in form.biasTrial.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        <p>
+        {{ form.contempt.label }}
+        {{ form.contempt(class_="form-check-input") }} Yes
+        </p>
+        {% if form.contempt.errors %}
+            <ul class="errors">
+                {% for error in form.contempt.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        <p>
+        {{ form.restrainingOrder.label }}
+        {{ form.restrainingOrder(class_="form-check-input") }} Yes
+        </p>
+        {% if form.restrainingOrder.errors %}
+            <ul class="errors">
+                {% for error in form.restrainingOrder.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        <p>
+        {{ form.accessChildren.label }}
+        {{ form.accessChildren(class_="form-check-input") }} Yes
+        </p>
+        {% if form.accessChildren.errors %}
+            <ul class="errors">
+                {% for error in form.accessChildren.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        <p>
+        {{ form.afcConcerns.label }}
+        {{ form.afcConcerns(class_="form-check-input") }} Yes
+        </p>
+        {% if form.afcConcerns.errors %}
+            <ul class="errors">
+                {% for error in form.afcConcerns.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        <p>
+        {{ form.evaluator.label }}
+        {{ form.evaluator(class_="form-check-input") }} Yes
+        </p>
+        {% if form.evaluator.errors %}
+            <ul class="errors">
+                {% for error in form.evaluator.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        <p>
+        {{ form.evaluatorConcerns.label }}
+        {{ form.evaluatorConcerns(class_="form-check-input") }} Yes
+        </p>
+        {% if form.evaluatorConcerns.errors %}
+            <ul class="errors">
+                {% for error in form.evaluatorConcerns.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        <p>
+        {{ form.afcThreats.label }}
+        {{ form.afcThreats(class_="form-check-input") }} Yes
+        </p>
+        {% if form.afcThreats.errors %}
+            <ul class="errors">
+                {% for error in form.afcThreats.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        <p>
+        {{ form.judgeThreats.label }}
+        {{ form.judgeThreats(class_="form-check-input") }} Yes
+        </p>
+        {% if form.judgeThreats.errors %}
+            <ul class="errors">
+                {% for error in form.judgeThreats.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        <p>
+        {{ form.evaluatorThreats.label }}
+        {{ form.evaluatorThreats(class_="form-check-input") }} Yes
+        </p>
+        {% if form.evaluatorThreats.errors %}
+            <ul class="errors">
+                {% for error in form.evaluatorThreats.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        {{ form.description.label }}
+        {{ form.description(class_="form-select") }}
+        {% if form.description.errors %}
+            <ul class="errors">
+                {% for error in form.description.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        <h4>Judicial Administrative</h4>
+
+        <p>
+        {{ form.docketNum.label }}
+        {{ form.docketNum(class_="form-check-input") }} Yes
+        </p>
+        {% if form.docketNum.errors %}
+            <ul class="errors">
+                {% for error in form.docketNum.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        <p>
+        {{ form.improperCase.label }}
+        {{ form.improperCase(class_="form-check-input") }} Yes
+        </p>
+        {% if form.improperCase.errors %}
+            <ul class="errors">
+                {% for error in form.improperCase.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        <p>
+        {{ form.noExperation.label }}
+        {{ form.noExperation(class_="form-check-input") }} Yes
+        </p>
+        {% if form.noExperation.errors %}
+            <ul class="errors">
+                {% for error in form.noExperation.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        <p>
+        {{ form.notInformed.label }}
+        {{ form.notInformed(class_="form-check-input") }} Yes
+        </p>
+        {% if form.notInformed.errors %}
+            <ul class="errors">
+                {% for error in form.notInformed.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        <p>
+        {{ form.noPurpose.label }}
+        {{ form.noPurpose(class_="form-check-input") }} Yes
+        </p>
+        {% if form.noPurpose.errors %}
+            <ul class="errors">
+                {% for error in form.noPurpose.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        <p>
+        {{ form.lockedOut.label }}
+        {{ form.lockedOut(class_="form-check-input") }} Yes
+        </p>
+        {% if form.lockedOut.errors %}
+            <ul class="errors">
+                {% for error in form.lockedOut.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        <p>
+        {{ form.noRight.label }}
+        {{ form.noRight(class_="form-check-input") }} Yes
+        </p>
+        {% if form.noRight.errors %}
+            <ul class="errors">
+                {% for error in form.noRight.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        <p>
+        {{ form.obstructed.label }}
+        {{ form.obstructed(class_="form-check-input") }} Yes
+        </p>
+        {% if form.obstructed.errors %}
+            <ul class="errors">
+                {% for error in form.obstructed.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        <p>
+        {{ form.redAltered.label }}
+        {{ form.redAltered(class_="form-check-input") }} Yes
+        </p>
+        {% if form.redAltered.errors %}
+            <ul class="errors">
+                {% for error in form.redAltered.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        <p>
+        {{ form.transcripts.label }}
+        {{ form.transcripts(class_="form-check-input") }} Yes
+        </p>
+        {% if form.transcripts.errors %}
+            <ul class="errors">
+                {% for error in form.transcripts.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        <p>
+        {{ form.apperance.label }}
+        {{ form.apperance(class_="form-check-input") }} Yes
+        </p>
+        {% if form.apperance.errors %}
+            <ul class="errors">
+                {% for error in form.apperance.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        <p>
+        {{ form.inaccurate.label }}
+        {{ form.inaccurate(class_="form-check-input") }} Yes
+        </p>
+        {% if form.inaccurate.errors %}
+            <ul class="errors">
+                {% for error in form.inaccurate.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        <p>
+        {{ form.changesMade.label }}
+        {{ form.changesMade(class_="form-check-input") }} Yes
+        </p>
+        {% if form.changesMade.errors %}
+            <ul class="errors">
+                {% for error in form.changesMade.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        <p>
+        {{ form.fClaims.label }}
+        {{ form.fClaims(class_="form-check-input") }} Yes
+        </p>
+        {% if form.inaccurate.errors %}
+            <ul class="errors">
+                {% for error in form.fClaims.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        <p>
+        {{ form.threatened.label }}
+        {{ form.threatened(class_="form-check-input") }} Yes
+        </p>
+        {% if form.threatened.errors %}
+            <ul class="errors">
+                {% for error in form.threatened.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+
+        <p>
+        {{ form.trialWO.label }}
+        {{ form.trialWO(class_="form-check-input") }} Yes
+        </p>
+        {% if form.trialWO.errors %}
+            <ul class="errors">
+                {% for error in form.trialWO.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        {{ form.description.label }}
+        {{ form.description(class_="form-select") }}
+        {% if form.description.errors %}
+            <ul class="errors">
+                {% for error in form.description.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        <h4>Administrative Nepotism </h4>
+
+        <p>
+        {{ form.inaccurate.label }}
+        {{ form.inaccurate(class_="form-check-input") }} Yes
+        </p>
+        {% if form.inaccurate.errors %}
+            <ul class="errors">
+                {% for error in form.inaccurate.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        <p>
+        {{ form.inaccurate.label }}
+        {{ form.inaccurate(class_="form-check-input") }} Yes
+        </p>
+        {% if form.inaccurate.errors %}
+            <ul class="errors">
+                {% for error in form.inaccurate.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        {{ form.description.label }}
+        {{ form.description(class_="form-select") }}
+        {% if form.description.errors %}
+            <ul class="errors">
+                {% for error in form.description.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        <h4>Due Process Timeline</h4>
+
+        {{ form.description.label }}
+        {{ form.description(class_="form-select") }}
+        {% if form.description.errors %}
+            <ul class="errors">
+                {% for error in form.description.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        <h4>Right to Counsel and Financial Equality</h4>
+
+        {{ form.description.label }}
+        {{ form.description(class_="form-select") }}
+        {% if form.description.errors %}
+            <ul class="errors">
+                {% for error in form.description.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        <h4>Due Process of Evidence</h4>
+
+        {{ form.description.label }}
+        {{ form.description(class_="form-select") }}
+        {% if form.description.errors %}
+            <ul class="errors">
+                {% for error in form.description.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        <h4>AFC Violations</h4>
+
+        {{ form.description.label }}
+        {{ form.description(class_="form-select") }}
+        {% if form.description.errors %}
+            <ul class="errors">
+                {% for error in form.description.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        <h4>"Expert" Violations</h4>
+
+        {{ form.description.label }}
+        {{ form.description(class_="form-select") }}
+        {% if form.description.errors %}
+            <ul class="errors">
+                {% for error in form.description.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+
+        </form>
+    </div>
+
+    <div class="col-sm-2">
+
+
+    </div>
+</div>
+</div>
+{% endblock %}
