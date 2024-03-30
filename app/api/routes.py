@@ -27,7 +27,6 @@ def allActors():
 @bp.route('/searchactors/<search_val>', methods = ['GET'])
 def searchActors(search_val):
     val =search_val
-    print(val)
     if(request.method == 'GET'):
         actors = Actors.query.filter(or_(ilike_op(Actors.lName,f'%{val}%'),ilike_op(Actors.fName,f'%{val}%') )).order_by(Actors.lName.desc())
         return actors_schema.dump(actors)

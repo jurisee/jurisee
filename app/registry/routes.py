@@ -94,7 +94,6 @@ def reviewReport(type, report_id):
         pgTitle = "Report an Offender"
     report = Report.query.filter(Report.submitterId == 3).order_by(Report.id.desc()).first()
     violations = ReportViolations.query.filter(ReportViolations.reportId == rId).all()
-    print(violations)
     if type == 'grievance':
         return render_template('registry/reviewgrievance.html', id=rId, report=report, violations=violations, type=type, title=pgTitle)
     if type == 'report':
@@ -108,7 +107,6 @@ def reviewGrievance(type, report_id):
     type=type
     report = Report.query.filter(Report.submitterId == 3).order_by(Report.id.desc()).first()
     violations = ReportViolations.query.filter(ReportViolations.reportId == rId).all()
-    print(violations)
 
     return render_template('registry/reviewgrievance.html', type=type, report=report, violations = violations, id=rId)
 

@@ -61,6 +61,8 @@ class Report(db.Model):
     highWealth = db.Column(db.Boolean, default=False)
     eighteenB = db.Column(db.Boolean, default=False)
     proSe = db.Column(db.Boolean, default=False)
+    race = db.Column(db.String(50))
+    ethnicity = db.Column(db.String(50))
     violations = db.relationship('ReportViolations', backref='report')
     
     def __repr__(self):

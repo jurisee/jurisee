@@ -137,6 +137,8 @@
             <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#s1accordian">
               <div class="accordion-body">
 
+              <p>Tell us about yourself. Share what you are comfortable sharing. </p>
+
               {% if type == 'grievance': %}
                <p>
                     {{ form.caseNum.label }}
@@ -163,6 +165,31 @@
                         {% endfor %}
                     </ul>
                 {% endif %}
+
+                              <p>
+                {{ form.race.label }}
+                {{ form.race(class_="form-select") }}
+                </p>
+                {% if form.race.errors %}
+                    <ul class="errors">
+                        {% for error in form.race.errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+
+               <p>
+                {{ form.ethnicity.label }}
+                {{ form.ethnicity(class_="form-select") }}
+                </p>
+                {% if form.ethnicity.errors %}
+                    <ul class="errors">
+                        {% for error in form.ethnicity.errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+
 
                <p>
                     {{ form.highIncome(class_="form-check-input") }}

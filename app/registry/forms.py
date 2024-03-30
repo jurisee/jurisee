@@ -22,9 +22,13 @@ class ReportForm(FlaskForm):
     court = SelectField('Court',
                        choices=['','Appellate', 'Appellate Terms' 'Civil', 'Court of Appeals', 'County','Criminal','Family','Supreme'], validators=[InputRequired()])
     gender = SelectField('Gender',
-                       choices=['','Man', 'Woman','Non-Binary', 'Nondisclosed'], validators=[InputRequired()])
-    highIncome = BooleanField('Is the other party high income (over $200,000 in annual income etc?)', false_values=None)
-    highWealth = BooleanField("Is the other party high wealth (over $1 million in self or family assets)", false_values=None)
+                       choices=['','Man', 'Woman','Non-Binary', 'Prefer not to say'], validators=[InputRequired()])
+    race = SelectField('Race',
+            choices=['','Asian', 'Black', 'Native American or Alaskan Native', 'Native Hawaiian or other Pacific Islander', 'White', 'Mixed', 'Prefer not to say'], validators=[InputRequired()])
+    ethnicity = SelectField('Ethnicity',
+            choices=['','Hispanic or Latino', 'Other','Prefer not to say'], validators=[InputRequired()])
+    highIncome = BooleanField('Is the other party high income (exceeding $450,000 in annual income etc?)', false_values=None)
+    highWealth = BooleanField("Is the other party high wealth (over $5-10 million in self or family assets)", false_values=None)
     eighteenB = BooleanField("Are you (or person effected) assigned an 18b lawyer?", false_values=None)
     proSe = BooleanField("Are you (or person effected) Pro Se?", false_values=None)
 
