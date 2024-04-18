@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container blockMargin">
+<div class="row">
+
+    <div class="col-sm-2">
+
+    </div>
+
+    <div class="col-sm-8">
+        <h1>Court Watch Guide</h1>
+
+        <p>When court watching, it’s important to be taken seriously. Court Watchers must be respectful and polite at all times. Here are some tips that can help.</p>
+        <ol type="1">
+            <li>Dress appropriately. Dress shirt and slacks or a skirt are best. Try to avoid jeans.</li>
+            <li>Take notes. Notes on plain paper are acceptable for legal purposes (should that be helpful for that single case).</li>
+            <li>However, to alert others and to ensure there is a verifiable, independent record that can also be used to support collective action, please be sure to complete the <a href="{{ url_for('actions.courtwatch') }}">Court Watch Form</a>.</li>
+            <li>When completing the <a href="{{ url_for('actions.courtwatch') }}">Court Watch Form</a>, provide at least the name of the judge, and the names of any other involved persons from the court that you can identify (e.g., AFC, evaluator, and the lawyers).</li>
+            <li>If you’re familiar with courtroom procedures, note any laws or regulations that are ignored. Pay attention to discriminatory behaviors by the lawyers and judge.</li>
+            <li>By law, courts open to the public.There must be a written order to close the court room. This includes family courts and custody cases. A court watcher should always ask to see the written order that has closed the court room if they are ordered out. </li>
+            <li>Above all, present a dignified, silent presence in the courtroom. Court watchers need to be taken seriously. This means no “making faces”, chewing gum, or other inappropriate actions. If you must communicate to a court watcher sitting nearby, do so by writing notes, NOT whispering. (courtesy of Families Against Court Travesties)</li>
+            <li>You may want to bring a sweater in case the courtroom is cold.</li>
+  </ol>
+        <hr>
+        <h5>Resources:</h5>
+        <ul>
+            <li>FACTs: Families Against Court Travesties, Inc.: <a href="https://signup.factscourtwatch.org/">https://signup.factscourtwatch.org/</a></li>
+            <li><a href="https://www.courtwatchnyc.org/">https://www.courtwatchnyc.org/</a></li>
+            <li><a href="https://courtwatch.org/">https://courtwatch.org/</a></li>
+            <li>Legal Momentum: <a href="https://www.legalmomentum.org">https://www.legalmomentum.org</a></li>
+            <li>American Bar Association: <a href="https://www.americanbar.org/groups/crsj/events_cle/recent/court-watching-programs/">https://www.americanbar.org/groups/crsj/events_cle/recent/court-watching-programs/</a></li>
+      </ul>
+
+    </div>
+
+    <div class="col-sm-2">
+
+
+    </div>
+
+<!-- Modal -->
+<div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalLabel">Search</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="input-group">
+          <input type="search" class="form-control rounded searchVal" placeholder="Search" aria-label="Search" aria-describedby="search-addon" id="1" />
+        </div>
+        <ul id="searchResults" class="list-group"></ul>
+          <hr>
+        <p>Didn't find who you were looking for?</p>
+        <a class="nav-link" href="{{ url_for('claims.addActor') }}"><button id="searchActorButton" type="button" class="btn w-100 btn-outline-secondary">Add New Offender</button></a>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary">Save Selection</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+{% endblock %}

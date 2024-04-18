@@ -1,5 +1,6 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, TextAreaField, IntegerField, BooleanField,RadioField, SelectField, MultipleFileField, SelectMultipleField, widgets, HiddenField
+from wtforms.fields.datetime import DateField
 from wtforms.validators import InputRequired, URL, Length, Email, DataRequired
 from wtforms.widgets import EmailInput
 
@@ -13,6 +14,7 @@ class ReportForm(FlaskForm):
     badActorType = SelectField('Offender Role',
                        choices=[],
                        validators=[InputRequired()])
+    approxDate = DateField('Date', format='%Y-%m-%d')
     states = SelectField('State',
                        choices=[],
                        validators=[InputRequired()])

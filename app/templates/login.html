@@ -16,7 +16,7 @@
 {% with messages = get_flashed_messages() %}
 {% if messages %}
     <div class="notification is-danger">
-        {{ messages[0] }} Please try again or <a href="{{ url_for('main.register') }}">Register</a> an account.
+        {{ messages[0] }} If you do not already have an account, please <a href="{{ url_for('main.register') }}">Register</a> to create one now.
     </div>
 {% endif %}
 {% endwith %}

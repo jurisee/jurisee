@@ -90,9 +90,38 @@ class Report(db.Model):
     ethnicity = db.Column(db.String(50))
     gender = db.Column(db.String(50))
     violations = db.relationship('ReportViolations', backref='report')
-    
+
     def __repr__(self):
         return f'<Report "{self.id}">'
+
+class CourtWatch(db.Model):
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    submitterId = db.Column(db.Integer)
+    reportType = db.Column(db.String(100), nullable=False)
+    title = db.Column(db.String(256))
+    summary = db.Column(db.Text)
+    caseNum = db.Column(db.String(100))
+    judgeId = db.Column(db.Integer, db.ForeignKey('actors.id'))
+    afcId = db.Column(db.Integer, db.ForeignKey('actors.id'))
+    evaluatorId = db.Column(db.Integer, db.ForeignKey('actors.id'))
+    opLawyerId = db.Column(db.Integer, db.ForeignKey('actors.id'))
+    effectedLawyerId = db.Column(db.Integer, db.ForeignKey('actors.id'))
+    states = db.Column(db.String(4))
+    county = db.Column(db.Integer, db.ForeignKey('counties.id'))
+    court = db.Column(db.String(100))
+    summary = db.Column(db.Text)
+    court_date = db.Column(db.DateTime, default=datetime.utcnow, server_default=func.now(), nullable=False)
+    date_created = db.Column(db.DateTime, default=datetime.utcnow, server_default=func.now(), nullable=False)
+    highIncome = db.Column(db.Boolean, default=False)
+    highWealth = db.Column(db.Boolean, default=False)
+    eighteenB = db.Column(db.Boolean, default=False)
+    proSe = db.Column(db.Boolean, default=False)
+    race = db.Column(db.String(50))
+    ethnicity = db.Column(db.String(50))
+    gender = db.Column(db.String(50))
+    def __repr__(self):
+        return f'<CourtWatch "{self.id}">'
+
 
 class ActorType(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)

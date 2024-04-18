@@ -89,10 +89,10 @@
               </button>
             </h2>
             <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#s1accordian">
-              <div class="accordion-body">
+              <div class="accordion-body" id="ba1">
 
                                     <!-- Button trigger search actor modal -->
-                <button type="button" class="btn btn-outline-primary w-100" id="searchActorBtn" data-bs-toggle="modal" data-bs-target="#searchModal">Search for Offender</button>
+                <button type="button" class="btn btn-outline-primary w-100 searchABtn" id="searchActorBtn" data-bs-toggle="modal" data-bs-target="#searchModal" value="ba1">Search for Offender</button>
 
                 <div id="off_name">
 
@@ -138,7 +138,7 @@
             <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#s1accordian">
               <div class="accordion-body">
 
-              <p>Tell us about yourself. Share what you are comfortable sharing. </p>
+              <p>Tell us about yourself (or the person effected). Share what you are comfortable sharing. </p>
 
               {% if type == 'grievance': %}
                <p>

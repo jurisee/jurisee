@@ -1,10 +1,11 @@
-from flask import render_template, request, url_for, flash, redirect, make_response
+from flask import render_template, request, url_for, flash, redirect, session, g, make_response
 from app.main import main_bp
 from app.extensions import db
 from app.main.forms import RegisterForm, LoginForm
 from werkzeug.security import generate_password_hash, check_password_hash
 from app.models import User
 from flask_login import login_user, logout_user, login_required, current_user
+from datetime import timedelta
 
 @main_bp.route('/', methods=('GET', 'POST'))
 def index():
@@ -54,6 +55,8 @@ def login():
             flash('The username or password is incorrect.')
             return redirect(url_for('main.login'))  # if the user doesn't exist or password is wrong, reload the page
         login_user(user)
+        session.permanent = True
+        session['user'] = user.id
         return redirect(url_for('main.profile'))
     return render_template('login.html', form=form)
 
@@ -66,6 +69,7 @@ def profile():
 @login_required
 def logout():
     logout_user()
+    session.pop("user", None)
     return redirect(url_for('main.index'))
 
 @main_bp.route('/codeconduct', methods=('GET', 'POST'))
