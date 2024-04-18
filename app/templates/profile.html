@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container blockMargin">
+<div class="row">
+<div class="col-sm-2">
+</div>
+
+<div class="col-sm-8">
+    <h1>Welcome {{  name }}!</h1>
+    <p>Join with others to bring transparency and accountability to all citizens, and awareness for those caught in this system. No one should be above the law, including individuals that have chosen the legal professions.</p>
+
+<div class="row">
+    <div class="col-6">
+    <div class="card violations">
+        <a href="{{ url_for('actions.index') }}">
+        <div class="card-body">
+            <h5 class="red-text">File a Report</h5>
+            <p>Did you or someone you know experience violations of your rights in the court? Be sure to file more reports following our easy to use process.</p>
+            <a href="{{ url_for('claims.addReport', type='report') }}"><button type="button" class="btn btn-outline-dark w-100 btn-lg px-4 me-sm-3 fw-bold">Report an Offender</button></a>
+        </div>
+    </div>
+    </div>
+
+    <div class="col-6">
+    <div class="card violations">
+        <a href="{{ url_for('actions.index') }}">
+        <div class="card-body">
+            <h5 class="red-text">Collective Action</h5>
+            <p>We are organizing to bring people to account. Complete an intake to join in community-led actions, or increase transparency by being a formal witness in the court rooms.</p>
+           <a href="{{ url_for('actions.index') }}"><button type="button" class="btn btn-lg btn-outline-dark px-4 me-sm-3 fw-bold w-100">Get Involved</button></a>
+        </div>
+    </div>
+    </div>
+
+
+
+
+</div>
+
+<div class="col-sm-2">
+</div>
+
+
+
+</div>
+</div>
+
+{% endblock %}

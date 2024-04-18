@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container blockMargin">
+<div class="row">
+<div class="col-sm-2">
+</div>
+
+<div class="col-sm-8">
+	<div class="card">
+	<div class="card-heading">
+		<h2>Login</h2>
+	</div>
+	<div class="card-body">
+
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+    <div class="notification is-danger">
+        {{ messages[0] }} Please try again or <a href="{{ url_for('main.register') }}">Register</a> an account.
+    </div>
+{% endif %}
+{% endwith %}
+
+		<form method="POST">
+
+        <p>
+        {{ form.email.label }}
+        {{ form.email(class_="form-control input-bg") }}
+        </p>
+        {% if form.email.errors %}
+            <ul class="errors">
+                {% for error in form.email.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        <p>
+        {{ form.password.label }}
+        {{ form.password(class_="form-control input-bg") }}
+        </p>
+        {% if form.password.errors %}
+            <ul class="errors">
+                {% for error in form.password.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        <p>
+            <input type="submit" class="btn btn-primary" value="Login">
+        </p>
+	</form>
+	</div>
+
+	</div>
+	</div>
+</div>
+
+<div class="col-sm-2">
+</div>
+
+
+</div>
+</div>
+
+{% endblock %}

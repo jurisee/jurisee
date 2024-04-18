@@ -51,20 +51,6 @@
         margin-top: 1em;
       }
 
-        .post {
-            flex: 20%;
-            padding: 10px;
-            margin: 5px;
-            background-color: #f3f3f3;
-            inline-size: 100%;
-        }
-
-        .message {
-            padding: 10px;
-            margin: 5px;
-            background-color: #f3f3f3
-        }
-
         .logo-header{
           width: 40px;
         }
@@ -95,7 +81,44 @@
    .grey {
       background-color: #f7f7f7
    }
+
+   label {
+    color: #754b4f;
+       font-size: 1em;
+}
+   h3.viewReport {
+       font-size:1em;
+       color: #f3f3f3;
+       background-color: #44545c;
+       padding: .25em;
+       text-align: center;
+       margin-top: 1em;
+   }
+
+   button.subscribe {
+       background-color: #dc3545;
+       border-color: #44545c;
+   }
+
+   .citation {
+       font-size: .75em
+   }
+
+   .l-citation {
+       color: #6c757d;
+   }
+
     </style>
+
+    <!-- MailerLite Universal -->
+<script>
+    (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+    .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+    n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+    (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+    ml('account', '908589');
+</script>
+<!-- End MailerLite Universal -->
 
 </head>
 <body>
@@ -103,36 +126,51 @@
   <!-- Fixed navbar -->
   <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
     <div class="container-fluid">
-      <img src="{{ url_for('static', filename='logo.svg') }}" class="logo-header">
-      <a class="navbar-brand" href="{{ url_for('main.index') }}"> Juri See </a>
+      <a class="navbar-brand" href="{{ url_for('main.index') }}">Juri•See</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarCollapse">
+      <li class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav ms-auto mb-2 mb-md-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="{{ url_for('main.index') }}">Home | </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{ url_for('main.about') }}">About | </a> 
-          </li>
+            <!--
           <li class="nav-item">
             <a class="nav-link" href="{{ url_for('news.index') }}">News | </a> 
           </li>
+          -->
           <li class="nav-item">
-            <a class="nav-link" href="{{ url_for('registry.index') }}">Offender List | </a> 
+            <a class="nav-link" href="{{ url_for('claims.index') }}">Claims | </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{ url_for('actions.index') }}">Actions</a> 
+            <a class="nav-link" href="{{ url_for('actions.index') }}">Actions | </a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('main.about') }}">About | </a>
+          </li>
+          {% if not current_user.is_authenticated %}
+              <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('main.login') }}">Login | </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('main.register') }}">Register </a>
+              </li>
+          {% endif %}
+          <li class="nav-item">
+            <button type="button" class="btn btn-primary subscribe" data-bs-toggle="modal" data-bs-target="#exampleModal">Subscribe</button>
+          </li>
+          {% if current_user.is_authenticated %}
+              <div class="dropdown">
+                  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Account</button>
+                  <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="{{ url_for('main.profile') }}">Profile</a></li>
+                      <li><a class="dropdown-item" href="{{ url_for('main.logout') }}">Logout</a></li>
+                  </ul>
+              </div>
+          {% endif %}
           <!--
           <li class="nav-item">
             <a class="nav-link" href="#resources">Team | </a> 
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#api">Funding Request</a>
-          </li>
-        -->
+          -->
         </ul>
       </div>
     </div>
@@ -148,29 +186,51 @@
     <div class="footer row blockMargin">
         <div class="pull-right col-md-3 text-center">
           <h5 class="red-text">Contact</h5>
-          <p>Email: <a href="mailto:jurisee@jurisee.org">jurisee@jurisee.com</a><br>
+          <p>Email: <a href="mailto:info@jurisee.org">jinfo@jurisee.com</a><br>
           Encrypted Email: <a href="mailto:jurisee@proton.me">jurisee@proton.me</a><br>
-          Signal:</p>
+          <button type="button" class="btn btn-primary subscribe" data-bs-toggle="modal" data-bs-target="#exampleModal">Subscribe</button>
         </div>
         <div class="col-md-6">
           <h5 class="red-text text-center">Legal Notice</h5>
-          <p> All postings in the Offender List reflect the opinions of the contributors and are not those of the owner(s) of the platform Juri See. Anyone who believes a posting violates Juri See's <a href="">Code of Conduct</a> should contact Juri See at <a href="jurisee@proton.me">jurisee@proton.me</a></p>
+          <p> All postings in the Claims section of this site reflect the opinions of the contributors and are not those of the owner(s) of the platform Juri•See. Anyone who believes a posting violates Juri•See's <a href="{{ url_for('main.codeconduct') }}">Code of Conduct</a> should contact Juri•See at <a href="jurisee@proton.me">jurisee@proton.me</a></p>
 
-          <p>Any and all information by or on the Juri See site is <i>not</i> legal advice. Any and all information is provided for  informational purposes only and is <i>not</i> to be relied upon as a professional opinion for your particular case. <i>Any decisions and actions you make regarding your case are your own.</i> Please consult an attorney if you are able and it is appropriate.</p>
+            <p>Any and all information by or on the Juri•See site is <i>not</i> legal advice. Any and all information is provided for informational purposes only and is <i>not</i> to be relied upon as a professional opinion for your particular case. <i>Any decisions and actions you make regarding your case are your own.</i> Please consult an attorney if you are able and it is appropriate.</p>
+            <p>Any information posted in the Claims section of this site is that of the individual contributors and should not be construed as advice or as endorsed by Juri•See</p>
           <h5 class="red-text text-center">Privacy Notice</h5>
-          <p>You can choose to remain anonymous. Juri See only collects personally identifying data that you have chosen to provide. We do not sell your data. We takes measures to only collect data needed for service functionality and maintenance. We do not retain data longer than necessary. Our servers are not located in the U.S.; any court data demands go through an international tribunal not a U.S.-based state court. To learn more see our Privacy Policy. </p>
+          <p>You can choose to remain anonymous. Juri•See only collects personally identifying data that you have chosen to provide. We do not and will not sell your data. We take measures to only collect data needed for service functionality, security and maintenance. We do not retain data longer than necessary. Our servers are not located in the U.S.; court data demands of the hosting service providers would need to go through an international tribunal not a U.S.-based state court. </p>
         
         </div>
         <div class="col-md-3 text-center">
           <h5 class="red-text">Copyright</h5>
-        <p>© <span class="year"></span> Juri See</p>
-
+        <p>© <span class="year"></span> Juri•See</p>
         <p>Made for Bosie Bo<br>
                 and all other child victims</p>
         <P>Juri See <i>denies</i> any AI technologies the right<br> to use our content to train algorithms without payment.</P>
         </div>
     </div>
 </footer>
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="ml-embedded" data-form="0VT6ls"></div>
+      </div>
+      <div class="modal-footer">
+
+      </div>
+    </div>
+  </div>
+</div>
+
 
  <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>

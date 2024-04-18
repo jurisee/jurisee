@@ -1,9 +1,34 @@
 from app.extensions import db
 from app.extensions import ma
+from app import login_manager
 from datetime import datetime
 from sqlalchemy import DateTime
 from sqlalchemy.sql import func
+from flask_login import UserMixin
 from flask_marshmallow import Marshmallow
+
+
+## START USER ACCOUNTS TABLES
+
+class User(UserMixin, db.Model):
+    id = db.Column(db.Integer, primary_key=True) # primary keys are required by SQLAlchemy
+    email = db.Column(db.String(100), unique=True)
+    password = db.Column(db.String(100))
+    name = db.Column(db.String(1000))
+    created_at = db.Column(db.DateTime, server_default=db.func.now())
+
+class Member(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    userId = db.Column(db.Integer, db.ForeignKey('user.id'))
+    fName = db.Column(db.String(160))
+    lName = db.Column(db.String(160))
+    highIncome = db.Column(db.Boolean, default=False)
+    highWealth = db.Column(db.Boolean, default=False)
+    eighteenB = db.Column(db.Boolean, default=False)
+    proSe = db.Column(db.Boolean, default=False)
+    race = db.Column(db.String(50))
+    ethnicity = db.Column(db.String(50))
+    created_at = db.Column(db.DateTime, server_default=db.func.now())
 
 
 #hold table for news articles
@@ -63,6 +88,7 @@ class Report(db.Model):
     proSe = db.Column(db.Boolean, default=False)
     race = db.Column(db.String(50))
     ethnicity = db.Column(db.String(50))
+    gender = db.Column(db.String(50))
     violations = db.relationship('ReportViolations', backref='report')
     
     def __repr__(self):
@@ -159,3 +185,12 @@ class Counties(db.Model):
         return f'<Counties "{self.id}">'
 
 
+@login_manager.user_loader
+def user_loader(id):
+    return User.query.filter_by(id=id).first()
+
+@login_manager.request_loader
+def request_loader(request):
+    username = request.form.get('username')
+    user = User.query.filter_by(email=username).first()
+    return user if user else None

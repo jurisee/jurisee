@@ -39,7 +39,7 @@
         <div class="card-body">
             <h5 class="red-text">File a Grievance</h5>
 <p>Filing a formal grievance with oversight bodies and organizations helps build a foundation for collective action. Juri See guides you through the process. </p>
-    <a href="{{ url_for('registry.addReport', type=type) }}"><button type="button" class="btn btn-outline-dark w-100 btn-lg px-4 me-sm-3 fw-bold">Turn Your Report into a Grievance</button></a>
+    <a href="{{ url_for('claims.addReport', type=type) }}"><button type="button" class="btn btn-outline-dark w-100 btn-lg px-4 me-sm-3 fw-bold">Turn Your Report into a Grievance</button></a>
         </div>
         </a>
     </div>
@@ -47,7 +47,7 @@
 
 <div class="col-md-4">
     <div class="card violations">
-        <a href="{{ url_for('registry.index') }}">
+        <a href="{{ url_for('claims.index') }}">
         <div class="card-body">
             <h5 class="red-text">Collective Action</h5>
             <p>We are organizing to bring people to account. Join in community-led actions, or increase transparency by being a formal witness in the court rooms.</p>
@@ -65,7 +65,7 @@
         <div class="card-body">
             <h5 class="red-text">File Another Report</h5>
 <p>Don't stop with one report! Did other violations occur? Be sure to file more reports following our easy to use process.</p>
-    <a href="{{ url_for('registry.addReport', type=type) }}"><button type="button" class="btn btn-outline-dark w-100 btn-lg px-4 me-sm-3 fw-bold">Report an Offender</button></a>
+    <a href="{{ url_for('claims.addReport', type=type) }}"><button type="button" class="btn btn-outline-dark w-100 btn-lg px-4 me-sm-3 fw-bold">Report an Offender</button></a>
         </div>
         </a>
     </div>

@@ -4,7 +4,6 @@ from wtforms.validators import InputRequired, URL, Length, Email, DataRequired
 from wtforms.widgets import EmailInput
 
 
-
 class ReportForm(FlaskForm):
     submitterId = HiddenField()
     reportType = HiddenField()
@@ -20,7 +19,7 @@ class ReportForm(FlaskForm):
     county = SelectField('County',
                        choices=[], validators=[InputRequired()])
     court = SelectField('Court',
-                       choices=['','Appellate', 'Appellate Terms' 'Civil', 'Court of Appeals', 'County','Criminal','Family','Supreme'], validators=[InputRequired()])
+                       choices=['','Appellate', 'Appellate Terms', 'Civil', 'Court of Appeals', 'County','Criminal','Family','Supreme'], validators=[InputRequired()])
     gender = SelectField('Gender',
                        choices=['','Man', 'Woman','Non-Binary', 'Prefer not to say'], validators=[InputRequired()])
     race = SelectField('Race',
@@ -43,6 +42,10 @@ class AddViolationsForm(FlaskForm):
     summary = TextAreaField('Please describe related events (approx 500 words limit)',validators=[InputRequired(), Length(max=2500)])
     hideSummary = BooleanField('Do not publish the description',false_values=None)
     evidence = MultipleFileField('Add Evidence')
+
+class AgreePublishForm(FlaskForm):
+    publishAgree = BooleanField("Agree", false_values=None)
+
 
 class AddViolationForm(FlaskForm):
     violation  = StringField('Violation', validators=[InputRequired(),

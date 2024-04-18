@@ -9,33 +9,19 @@
 <div class="col-sm-8">
 	<div class="card">
 	<div class="card-heading">
-		<h2>Create Account</h2>
+		<h2>Register</h2>
 	</div>
 	<div class="card-body">
-		<form method="POST">
-        <p>
-        {{ form.firstName.label }}
-        {{ form.firstName(class_="form-control input-bg") }}
-        </p>
-        {% if form.firstName.errors %}
-            <ul class="errors">
-                {% for error in form.firstName.errors %}
-                    <li>{{ error }}</li>
-                {% endfor %}
-            </ul>
-        {% endif %}
 
-        <p>
-        {{ form.lastName.label }}
-        {{ form.lastName(class_="form-control input-bg") }}
-        </p>
-        {% if form.lastName.errors %}
-            <ul class="errors">
-                {% for error in form.lastName.errors %}
-                    <li>{{ error }}</li>
-                {% endfor %}
-            </ul>
-        {% endif %}
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+    <div class="notification is-danger">
+        {{ messages[0] }}. Go to <a href="{{ url_for('main.login') }}">login page</a>.
+    </div>
+{% endif %}
+{% endwith %}
+
+		<form method="POST">
 
         <p>
         {{ form.email.label }}
@@ -48,6 +34,57 @@
                 {% endfor %}
             </ul>
         {% endif %}
+
+        <p>
+        {{ form.password.label }}
+        {{ form.password(class_="form-control input-bg") }}
+        </p>
+        {% if form.password.errors %}
+            <ul class="errors">
+                {% for error in form.password.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        <p>
+        {{ form.confirm.label }}
+        {{ form.confirm(class_="form-control input-bg") }}
+        </p>
+        {% if form.confirm.errors %}
+            <ul class="errors">
+                {% for error in form.confirm.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        <p>
+        {{ form.name.label }}
+        {{ form.name(class_="form-control input-bg") }}
+        </p>
+        {% if form.name.errors %}
+            <ul class="errors">
+                {% for error in form.name.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        <p>By creating this account I agree to comply with Juri•See's <a href="{{ url_for('main.codeconduct') }}" target="_blank">Code of Conduct</a>.</p>
+       <p>
+            {{ form.agree(class_="form-check-input") }}
+            {{ form.agree.label }}
+        </p>
+
+        {% if form.agree.errors %}
+            <ul class="errors">
+                {% for error in form.agree.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
 
         <p>
             <input type="submit" class="btn btn-primary" value="Register">

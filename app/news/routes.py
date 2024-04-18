@@ -5,7 +5,6 @@ from app.models import Article
 from datetime import datetime
 
 
-
 @bp.route('/')
 def index():
     news = Article.query.all()

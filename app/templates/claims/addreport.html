@@ -107,8 +107,8 @@
                     </ul>
                 {% endif %}
 
-
-                              <p>
+              <div id="off_role">
+                <p>
                 {{ form.badActorType.label }}
                 {{ form.badActorType(class_="form-select") }}
                 </p>
@@ -119,6 +119,7 @@
                         {% endfor %}
                     </ul>
                 {% endif %}
+              </div>
 
               <a href="#" class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseOne" >Next</a>
 
@@ -131,7 +132,7 @@
           <div class="accordion-item">
             <h2 class="accordion-header" id="headingThree">
               <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-               Details
+               Demographics
               </button>
             </h2>
             <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#s1accordian">
@@ -261,7 +262,7 @@
 
 
       <p>
-          <a class="nav-link" href="{{ url_for('registry.entryViolations', type=type) }}">
+          <a class="nav-link" href="{{ url_for('claims.entryViolations', type=type) }}">
             <input type="submit" id="saveNext" class="btn btn-primary" value="Select Violations">
           </a>
       </p>
@@ -288,7 +289,7 @@
         <ul id="searchResults" class="list-group"></ul>
           <hr>
         <p>Didn't find who you were looking for?</p>
-        <a class="nav-link" href="{{ url_for('registry.addActor') }}"><button id="searchActorButton" type="button" class="btn w-100 btn-outline-secondary">Add New Offender</button></a>
+        <a class="nav-link" href="{{ url_for('claims.addActor') }}"><button id="searchActorButton" type="button" class="btn w-100 btn-outline-secondary">Add New Offender</button></a>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>

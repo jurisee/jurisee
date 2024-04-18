@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container blockMargin">
+<div class="row">
+
+<div class="col-sm-2">
+</div>
+
+<div class="col-sm-8">
+    <span class="title pgTitle">
+        <h1>Title: {{  report.title }} </h1>
+    </span>
+
+    <div class="row">
+        <div class="col">
+            <strong>Type: </strong> {{  report.reportType }}<br>
+            <strong>Date Created: </strong> {{ report.date_created }}<br>
+        </div>
+        <div class="col">
+            <strong>Category: </strong> {{ report.category.category }}
+        </div>
+    </div>
+
+
+    <h3 class="viewReport">Offender</h3>
+    <div class="row">
+        <div class="col">
+            <strong>Name: </strong> {{ report.actor.fName}} {{ report.actor.lName}}
+        </div>
+        <div class="col">
+            <strong>Role: </strong> {{ report.role.actorType }}
+        </div>
+    </div>
+
+
+    <h3 class="viewReport">Location</h3>
+    <div class="row">
+        <div class="col"><strong>Court: </strong> {{ report.court }}</div>
+        <div class="col"><strong>County: </strong>{{ report.counties.county }}</div>
+        <div class="col"><strong>State: </strong>{{ report.states }}</div>
+    </div>
+
+    <h3 class="viewReport">Violations</h3>
+    <div class="row">
+        <div class="col">
+            <strong>Identified Violations: </strong>
+            <ul>
+                {% for violation in violations %}
+                    <li>{{ violation.violation.violation }}</li>
+                {% endfor %}
+            </ul>
+            <strong>Description: </strong><br>
+            {{ report.summary }}
+        </div>
+    </div>
+
+    <h3 class="viewReport">Demographics</h3>
+    <div class="row">
+        <div class="col">
+            <p><strong>Effected Person's Gender: </strong> {{ report.gender }}</p>
+            <p><strong>Effected Person's Race: </strong> {{ report.race }}</p>
+            <p><strong>Effected Person's Ethnicity: </strong> {{ report.ethnicity }}</p>
+            <p><strong>Effected Person assigned 18B: </strong>{{ report.eighteenB }}</p>
+            <p><strong>Effected Person is Pro Se: </strong>{{ report.proSe }}</p>
+        </div>
+         <div class="col">
+            <p><strong>Other Party's Income > $200,000: </strong>{{ report.highIncome }}</p>
+            <p><strong>Other Party's Assets > $1,000,000: </strong>{{ report.highWealth }}</p>
+         </div>
+    </div>
+
+</div>
+</div>
+
+
+
+<div class="col-sm-2">
+</div>
+
+
+</div>
+</div>
+
+{% endblock %}

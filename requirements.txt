@@ -1,0 +1,14 @@
+flask
+flask-sqlalchemy
+flask-login
+flask_marshmallow
+flask_restful
+flask_wtf
+simplejson
+Api
+flask-mysql
+flask_mysqldb
+pymysql
+SQLAlchemy-serializer
+Werkzeug
+flask_authorize

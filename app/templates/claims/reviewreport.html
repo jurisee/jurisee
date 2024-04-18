@@ -9,7 +9,18 @@
 
 <div class="col">
     <span class="title pgTitle">
-        <h1>Title: {{  report.title }}</h1>
+        <h1>{{  title  }}</h1>
+    </span>
+    <p>Review the report before publishing.</p>
+ <ul class="list-group list-group-horizontal-sm text-center w-100 d-flex">
+  <li class="list-group-item w-100">Step 1: <br>General</li>
+  <li class="list-group-item w-100">Step 2:<br>Violations</li>
+  <li class="list-group-item w-100  active">Step 3:<br>Review</li>
+  <li class="list-group-item w-100">Step 4: <br>Next Steps</li>
+</ul>
+<br>
+
+<h2 class="red-text">Title: {{  report.title }}</h2>
 
 
 <h5>Offender</h5>
@@ -82,6 +93,37 @@
 
     </div>
 </div>
+
+      <hr>
+      <form method="POST">
+        {{ form.csrf_token }}
+
+        <p>By submitting this report I agree:
+        <ul>
+          <li>I am ready for this report to be public</li>
+          <li>This report complies with the <a href="{{ url_for('main.codeconduct') }}">Code of Conduct</a>.</li>
+        </ul>
+            {{ form.publishAgree(class_="form-check-input") }}
+            {{ form.publishAgree.label }}
+        </p>
+
+        {% if form.publishAgree.errors %}
+            <ul class="errors">
+                {% for error in form.publishAgree.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+    <p></p>
+       <p class="text-end">
+         <a href="{{ url_for('claims.nextSteps', type=type, report_id=id) }}" class="btn btn-primary"><input type="submit" class="btn btn-primary" value="Save"></a>
+        </p>
+
+
+</form>
+
+
 
 
 </div>

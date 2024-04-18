@@ -6,11 +6,12 @@
     <div class="row">
 
         <div class="col-sm-7">
-            <h1>Offender List</h1>
+            <h1>Claims</h1>
 <ul class="nav nav-tabs">
   <li class="nav-item">
     <a class="nav-link active" aria-current="page" href="#">All</a>
   </li>
+    <!--
   <li class="nav-item">
     <a class="nav-link" href="#">Top 10</a>
   </li>
@@ -20,6 +21,7 @@
   <li class="nav-item">
     <a class="nav-link" aria-disabled="true">NY</a>
   </li>
+  -->
 </ul>
 
 <table class="table">
@@ -38,10 +40,10 @@
         {% for report in reports %}
             <tr scope="row">
                 {% if report.reportType == 'Grievance' %}
-                    <td><a href="{{ url_for('registry.viewGrievance', report_id=report.id) }}">View</a></td>
+                    <td><a href="{{ url_for('claims.viewGrievance', report_id=report.id) }}">View</a></td>
                 {% endif %}
                 {% if report.reportType == 'Report' %}
-                    <td><a href="{{ url_for('registry.viewReport', report_id=report.id) }}">View</a></td>
+                    <td><a href="{{ url_for('claims.viewReport', report_id=report.id) }}">View</a></td>
                 {% endif %}
                 <td>{{ report.actor.fName}} {{ report.actor.lName}}</td>
                 <td>{{ report.role.actorType }}</td>
@@ -56,11 +58,13 @@
     <div class="card">
     <div class="card-body">
     <h3 class="red-text">Share a report</h3>
-    <p class="card-text">If you experienced or know of abuses alert others! You can file a public report anonymously. </p>
-    <a href="{{ url_for('registry.addReport', type='report') }}"><button type="button" class="btn btn-outline-dark w-100 btn-lg px-4 me-sm-3 fw-bold">Report an Offender</button></a>
+        <p class="card-text">If you experienced or know of abuses alert others. You can publish a report anonymously. </p>
+    <a href="{{ url_for('claims.addReport', type='report') }}"><button type="button" class="btn btn-outline-dark w-100 btn-lg px-4 me-sm-3 fw-bold">Report an Offender</button></a>
+        <!--
     <h3 class="red-text">File a Grievance</h3>
     <p>File a formal grievance with oversight bodies and organizations. Juri See guides you through the process. Filing a grievance in partnership with Juri See ensures there is an independent, verifiable record of the complaints filed. </p>
-    <a href="{{ url_for('registry.addReport', type='grievance') }}"><button type="button" class="btn btn-outline-dark w-100 btn-lg px-4 me-sm-3 fw-bold">File a Grievance</button></a>
+    <a href="{{ url_for('claims.addReport', type='grievance') }}"><button type="button" class="btn btn-outline-dark w-100 btn-lg px-4 me-sm-3 fw-bold">File a Grievance</button></a>
+    -->
     </div>
     </div>
 
@@ -70,11 +74,10 @@
   </div>
   <div class="card-body">
     <p class="card-text">
-        <strong>Do not submit to Offender List.</strong> Whistleblower info, or evidence of sexual or graphic abuse should be submitted securely. Contact us for steps to share securely:</p>
+        <strong>Do not submit sensitive information as a claim.</strong> Whistleblower info, or evidence of sexual or graphic abuse should be submitted securely. Contact us for steps to share securely:</p>
     <p>
         Email: <a href="mailto:jurisee@jurisee.org">jurisee@jurisee.org</a><br>
           Encrypted Email: <a href="mailto:jurisee@proton.me">jurisee@proton.me</a><br>
-          Signal:</p>
   </div>
 </div>
 

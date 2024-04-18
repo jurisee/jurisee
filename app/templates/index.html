@@ -10,10 +10,10 @@
     </div>
 
     <div class="col-sm-8 text-secondary text-center blockMargin">
-      <h1 class="display-5 fw-bold text-white">Juri See</h1>
+      <h1 class="display-5 fw-bold text-white">Juri•See</h1>
 
-      <p class="fs-5 mb-4"><p class="lead">A collective of professional human rights workers, lawyers, journalists, technologists, community organizers, and investigators organizing affected individuals; conducting in-depth investigations; and providing data-at-scale to enable evidence-driven reporting and transparency in our shared fight against civil court corruption.</p>
-        <h2 class="red-text">Fighting to End Judicial Corruption</h2>
+      <p class="fs-5 mb-4"><p class="lead">Data-at-scale and investigative reporting of those working in the civil courts.</p>
+        <h2 class="red-text">Transparency for the Third Branch</h2>
 
         <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
           <a href="#whatwedo"><button type="button" class="btn btn-outline-light btn-lg px-4 me-sm-3 fw-bold">What We Do</button></a>
@@ -46,30 +46,31 @@
 
         <div class="card">
         <div class="card-body">
-            <h2 class="red-text">Registry</h2>
-            <p>We are collecting reports of corruption (which you can provide anonymously) and tracking official complaints to bring transparency and accountability to corrupt players and oversight bodies.</p>
-            <a href="{{ url_for('registry.index') }}"><button type="button" class="btn btn-lg btn-outline-dark px-4 me-sm-3 fw-bold">Find an Offender</button></a>
-            <a href="{{ url_for('registry.addReport', type='report') }}"><button type="button" class="btn btn-lg btn-outline-dark px-4 me-sm-3 fw-bold">Report an Offender</button></a>
-            <a href="{{ url_for('registry.addReport', type='grievance') }}"><button type="button" class="btn btn-outline-dark btn-lg px-4 me-sm-3 fw-bold">File a Grievance</button></a>
+            <h2 class="red-text">Claims</h2>
+            <p>We are collecting and publishing reports of bad actors in the court system to raise awareness for victims (which you can provide anonymously). The reported violations are mapped directly to laws and regulations, to support collective action and better enables us to track patterns of abuses. </p>
+            <a href="{{ url_for('claims.addReport', type='report') }}"><button type="button" class="btn btn-lg btn-outline-dark px-4 me-sm-3 fw-bold">Report an Offender</button></a>
+            <!--<p>COMING SOON: We are collecting and publishing formal grievances against bad actors in the court to bring transparency and accountability to corrupt players and oversight bodies.</p>
+           <a href="{{ url_for('claims.addReport', type='grievance') }}"><button type="button" class="btn btn-outline-dark btn-lg px-4 me-sm-3 fw-bold">File a Grievance</button></a>-->
         </div>
         </div>
 
         <div class="card">
         <div class="card-body">
             <h2 class="red-text">Data Driven Investigations</h2>
-            <p>We are using data at scale, community reporting, and proven investigative methodology to trace criminal connections and patterns within the civil court ecosystem. It is time to bring needed transparency to this judicial branch of government, and readily identify the big players, cronyism, and hallmarks of corruption. </p>
+            <p>We are building data at scale, cross-collating with open source intelligence (OSINT) to trace connections and patterns, and guide investigations within the civil court ecosystem.</p>
 
-            <p>An API of public data, <i>making sure publicly-owned data is public</i>, is coming soon. </p>
+            <p>Coming soon!</p>
         </div>
         </div>
+
 
         <div class="card">
         <div class="card-body">
             <h2 class="red-text">Community Led Actions</h2>
-            <p>We are empowering individuals caught within the system to document and challenge abuses in their case, safely report misconduct, take collective action, help to track the big players of corruption, increase the effectiveness of court watching, and more.</p>
+            <p>We are empowering individuals caught within the system to safely report misconduct, and take collective action, help to track the big players of corruption, to increase the impact of court watching, and more.</p>
 
             <a href="{{ url_for('actions.index') }}"><button type="button" class="btn btn-lg btn-outline-dark px-4 me-sm-3 fw-bold">Get Involved</button></a>
-            <a href=""><button type="button" class="btn btn-lg btn-outline-dark px-4 me-sm-3 fw-bold">Use Our Resources</button></a>
+            <!--<a href=""><button type="button" class="btn btn-lg btn-outline-dark px-4 me-sm-3 fw-bold">Use Our Resources</button></a>-->
         </div>
         </div>
 
@@ -86,6 +87,8 @@
     <div class="col-sm-2">
             
     </div>
+
+
 
 
 </div>

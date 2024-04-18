@@ -36,7 +36,7 @@ class IntakeForm(FlaskForm):
 class ReportViolations(FlaskForm):
     reportID = IntegerField('Price', validators=[InputRequired()])
 
-class CourtWatcherForm(FlaskForm):
+class CourtWatchForm(FlaskForm):
     judgeName = StringField('Judge Name', validators=[InputRequired(),Length(max=100)])
     afcName = StringField('Attorney for Child', validators=[InputRequired(),Length(max=100)])
     ocName = StringField('Oposing Counsel', validators=[InputRequired(),Length(max=100)])

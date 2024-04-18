@@ -3,8 +3,10 @@ const d = new Date();
 let year = d.getFullYear();
 $( ".year" ).html(year);
 
+//report offender form hide/show certain fields
 //$( ".nyoptions" ).hide();
 $("#off_name").hide();
+$("#off_role").hide();
 
 $('.searchVal').keyup(function() {
     val = $(".searchVal").val();
@@ -28,14 +30,15 @@ $('#searchResults').on('click','li',function() {
     id = this.value
     test = this.id
     name = $(this).html();
-    html = "<label>Offender Name: </label><br>" +
+    html = "<p><label>Offender Name: </label><br>" +
         name +
-        "<a href='' data-bs-toggle=\"modal\" data-bs-target=\"#searchModal\">Edit</a>"
+        " <a href='' data-bs-toggle=\"modal\" data-bs-target=\"#searchModal\">Edit</a></p>"
     $("#badActorId").val(id);
     $("#off_name").show();
     $("#off_name").html('');
     $("#off_name").append(html);
     $("#searchActorBtn").hide()
+    $("#off_role").show();
     $('#searchModal').modal('hide');
     $('#searchVal').val('');
     $("#searchResults").html('');
@@ -53,3 +56,7 @@ $("#states").change(function(){
 $("#violations").children('li').addClass("list-group-item");
 
 //$("li").addClass( "list-group-item" );
+
+$('#saveNext').click(function(){
+    $(".accordion-collapse").addClass("collapse show");
+});
