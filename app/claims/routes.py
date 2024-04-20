@@ -35,7 +35,7 @@ def addViolations(type, vio_id):
         pgTitle = "File a Grievance"
     else:
         pgTitle = "Report an Offender"
-    vItem = vId - 1
+    vItem = vId
     categories = VioCategory.query.all()
     category = categories[vItem]
     form = AddViolationsForm()
