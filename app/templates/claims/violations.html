@@ -20,8 +20,9 @@
 <br>
     <h3 class="red-text">Violations</h3>
 
-    <p>Select a violation category below to begin a report. Add a report for each type of violation you have experienced. </p>
+    <p>Select a violation category below to begin a report. Add a report for each type of violation you have experienced.<strong>Note:</strong> Don't see your issues here? More are coming! Also, send us a note. We will track the law and add a report category.</p>
     <p><a href="#multiple">Why file multiple reports?</strong></a></p>
+
 
 
 <div class ="row">
@@ -73,24 +74,95 @@
     <div class="card violations">
         <a href="{{ url_for('claims.addViolations', type=type, vio_id=4) }}">
         <div class="card-header">
-           <h5 class="red-text">Cronyism</h5>
+           <h5 class="red-text">Judicial Ethics</h5>
         </div>
         <div class="card-body">
             <p>Judge repeat appoints AFCs, and others; does not report appointments, remains on case with known conflict of interest(s), orders legal fees without financial review, etc.</p>
         </div>
         </a>
     </div>
+
+    </div>
+
+    <div class="col-md-4">
+
+    <div class="card violations">
+        <a href="{{ url_for('claims.addViolations', type=type, vio_id=5) }}">
+        <div class="card-header">
+           <h5 class="red-text">Discrimination</h5>
+        </div>
+        <div class="card-body">
+            <p>Discriminatory statements, decisions that are provide an unfair advantage to one party, one party has a lawyer the other does not, etc.</p>
+        </div>
+        </a>
+    </div>
+
+    </div>
+
+    <div class="col-md-4">
+
+    <div class="card violations">
+        <a href="{{ url_for('claims.addViolations', type=type, vio_id=6) }}">
+        <div class="card-header">
+           <h5 class="red-text">Right to Counsel</h5>
+        </div>
+        <div class="card-body">
+            <p>Custodial rights removed without being provided a lawyer, poor person requests are ignored or denied without financial review, one party is high wealth and other party has 18B, etc.</p>
+        </div>
+        </a>
+    </div>
+
+    </div>
+
 </div>
+
+  <div class="row">
+    <div class="col-md-4">
+
+    <div class="card violations">
+        <a href="{{ url_for('claims.addViolations', type=type, vio_id=7) }}">
+        <div class="card-header">
+           <h5 class="red-text">Administrative Violations</h5>
+        </div>
+        <div class="card-body">
+            <p>Person is not given or is denied access to the record, court records are altered or intentionally false, the courtroom does not notify you of purpose of appearances, the assignments of "experts" and AFCs are not filed, etc.</p>
+        </div>
+        </a>
+    </div>
+
     </div>
 
     <div class="col-md-4">
 
+    <div class="card violations">
+        <a href="{{ url_for('claims.addViolations', type=type, vio_id=8) }}">
+        <div class="card-header">
+           <h5 class="red-text">Procedural and Timeline</h5>
+        </div>
+        <div class="card-body">
+            <p>Proceedings exceed 6 months, decisions are not placed in writing within 60 days, trial is conducted without any evidence exchanged, rights are removed without trial, etc.</p>
+        </div>
+        </a>
+    </div>
+
     </div>
 
     <div class="col-md-4">
 
+    <div class="card violations">
+        <a href="{{ url_for('claims.addViolations', type=type, vio_id=9) }}">
+        <div class="card-header">
+           <h5 class="red-text">Insufficient Evidence</h5>
+        </div>
+        <div class="card-body">
+            <p>Your custodial rights, or housing are removed without evidence that meets unfit parent standards, evidence of abuse and domestic violence is ignored or obstructed from the record, requests to see evidence are ignored or even denied, you are denied the right to send subponeas,  .</p>
+        </div>
+        </a>
     </div>
-</div>>
+
+    </div>
+
+</div>
 
 
 </div>
@@ -106,7 +178,7 @@
         <div class="card-body">
             <h5 class="card-title">Why File Multiple Reports?</h5>
             <ul>
-                <li>Documenting all the violations you encounter in a single report enables offenders to hide the scale of what is happening.</li>
+                <li>Documenting all the violations you encounter in a single report enables offenders to hide the scale of what is happening. By submitting them as unique reports, each claim must be considered by administrative bodies.</li>
                 <li>Submitting what you can finish in one sitting, and adding more reports later helps manage trauma and PTSD.</li>
                 <li>Submitting violations by type supports collective action and better enables us to track patterns of abuses.</li>
                 <li>Creating a report as the violations occur builds a timely record; you can choose to publish or file later when you feel ready.</li>

@@ -177,7 +177,7 @@ def addActor():
         new_actor = Actors(fName=form.fName.data,lName=form.lName.data,FUID=form.FUID.data,licenseNum=form.licenseNum.data, email=form.email.data)
         db.session.add(new_actor)
         db.session.commit()
-        return redirect(url_for('registry.addOrg'))
+        return redirect(url_for('claims.addReport', type='report'))
     return render_template('claims/addactor.html', form=form, actors=actors)
 
 @bp.route('/addorg/', methods=('GET','POST'))

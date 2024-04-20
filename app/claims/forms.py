@@ -61,11 +61,9 @@ class AddActorForm(FlaskForm):
                                              Length(max=100)])
     lName  = StringField('Last Name', validators=[InputRequired(),
                                              Length(max=100)])
-    FUID  = StringField('FUID', validators=[InputRequired(),
-                                             Length(max=100)])
-    licenseNum  = StringField('License Number', validators=[InputRequired(),
-                                             Length(max=100)])
-    email = StringField('Email', validators=[InputRequired(), Email()])
+    FUID  = StringField('FUID', validators=[Length(max=100)])
+    licenseNum  = StringField('License Number', validators=[Length(max=100)])
+    email = StringField('Email', validators=[Email()])
 
 
 class AddOrgForm(FlaskForm):
